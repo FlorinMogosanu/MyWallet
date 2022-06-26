@@ -61,11 +61,11 @@ a  p {
 }
 
 .top-img {
-    animation: top-animation 0.8s linear reverse both;
+    animation: top-animation 0.8s linear both;
 }
 
 .bottom-img {
-    animation: bottom-animation 0.8s linear reverse both;
+    animation: bottom-animation 0.8s linear both;
 }
 
 @keyframes top-animation {
@@ -74,7 +74,7 @@ a  p {
           transform-origin: left;
         }
         100% {
-          transform: rotate(-45deg) translateX(-300px) translateY(-110px);
+          transform: rotate(-45deg) translateX(-300px) translateY(-110px );
           transform-origin: left;
         }
       }
