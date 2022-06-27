@@ -18,11 +18,14 @@ async function loginUser(event){
       })
     })
     .then((res)=> res.json())
-    .catch((err)=> alert(err.message))
+    .catch((err)=> console.log(err.message))
 
     if(result.status === 'ok'){
       console.log('Got the token:', result.data)
       localStorage.setItem('token', result.data)
       location.replace('home.html')
+    }
+    else{
+      alert(result.error)
     }
 }

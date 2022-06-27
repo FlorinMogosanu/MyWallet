@@ -8,16 +8,18 @@ const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
 
 router.post('/', async (req, res) => {
   const {error} = validate(req.body)
-  if(error) return res.json({status: 'error', message: error.message})
+  if(error) return res.json({status: 'error', error: error.message})
 
-  const {username, email , password: plainTextPassword} = req.body
+
+  const {firstName, lastName, email , password: plainTextPassword} = req.body
   const password = await bcrypt.hash(plainTextPassword,10)
 
-  if(!username || !email || !plainTextPassword) return res.json({status: error, error: 'All fields must be provided'})
+  if(!firstName || !lastName || !email || !plainTextPassword) return res.json({status: error, error: 'All fields must be provided'})
 
   try{
     const user = await User.create({
-      username,
+      firstName,
+      lastName,
       email,
       password
     })
@@ -26,7 +28,7 @@ router.post('/', async (req, res) => {
     res.json({status: 'ok', data: token})
   }
   catch(err){
-    if(err.code === 11000) return res.json({status: error, error: 'User with the email registered already exists'})
+    if(err.code === 11000) return res.json({status: 'error', error: 'User with the email registered already exists'})
     return res.json({status: 'error', error: err.message});
   }
 })

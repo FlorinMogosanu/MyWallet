@@ -4,7 +4,8 @@ form.addEventListener('submit', registerUser)
 
 async function registerUser(event){
   event.preventDefault();
-  const username = document.getElementById('username')
+  const firstName = document.getElementById('first-name')
+  const lastName = document.getElementById('last-name')
   const email = document.getElementById('email')
   const password = document.getElementById('password')
 
@@ -14,7 +15,8 @@ async function registerUser(event){
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username: username.value,
+      firstName: firstName.value,
+      lastName: lastName.value,
       email: email.value,
       password:password.value
     })

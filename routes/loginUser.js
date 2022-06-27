@@ -9,7 +9,7 @@ const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
 
 router.post('/', async (req, res) => {
   const {error} = validate(req.body)
-  if(error) return res.json({status: 'error', message: error.message})
+  if(error) return res.json({status: 'error', error: error.message})
 
   
   const {email , password} = req.body
