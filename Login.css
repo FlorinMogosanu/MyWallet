@@ -47,14 +47,14 @@ a  p {
 }
 
 .top-img {
-    height: 18rem;
+    height: 35vh;
     position: absolute;
     top: -120px;
     right: -180px;
 }
 
 .bottom-img {
-    height: 18rem;
+    height: 35vh;
     position: absolute;
     bottom: -120px;
     left: -180px;
@@ -74,7 +74,7 @@ a  p {
           transform-origin: left;
         }
         100% {
-          transform: rotate(-45deg) translateX(-300px) translateY(-110px );
+          transform: rotate(-45deg) translateX(-300px) translateY(-110px);
           transform-origin: left;
         }
       }
