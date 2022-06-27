@@ -5,4 +5,4 @@ function checkIfLoggedIn() {
   if(token) location.replace('/static/pages/home.html')
 }
 
-// checkIfLoggedIn();
+checkIfLoggedIn();
