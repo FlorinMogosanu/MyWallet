@@ -7,6 +7,9 @@ const router = express.Router();
 const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
 
 router.post('/', async (req, res) => {
+  const {error} = validate(req.body)
+  if(error) return res.json({status: 'error', message: error.message})
+
   const {username, email , password: plainTextPassword} = req.body
   const password = await bcrypt.hash(plainTextPassword,10)
 
@@ -24,7 +27,7 @@ router.post('/', async (req, res) => {
   }
   catch(err){
     if(err.code === 11000) return res.json({status: error, error: 'User with the email registered already exists'})
-    return res.json({status: 'error', error: err.code});
+    return res.json({status: 'error', error: err.message});
   }
 })
 

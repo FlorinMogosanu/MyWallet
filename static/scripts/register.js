@@ -30,5 +30,5 @@ async function registerUser(event){
     alert(result.error)
   }
 
-  console.log(result)
+
 }
