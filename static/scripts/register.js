@@ -24,6 +24,7 @@ async function registerUser(event){
 
   if(result.status === 'ok'){
     location.replace('/static/pages/home.html')
+    localStorage.setItem('token',result.data)
   }
   else{
     alert(result.error)

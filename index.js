@@ -7,6 +7,9 @@ const bcrypt = require('bcrypt');
 const { error } = require('console');
 const jwt = require('jsonwebtoken');
 
+
+const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
+
 require('./startup/db')()
 
 app.use('/static', express.static(path.join(__dirname, 'static')))
@@ -25,12 +28,15 @@ app.post('/api/register', async (req, res) => {
       password
     })
     console.log('user created successfully',user)
+    const token = jwt.sign({id:user._id, email:user.email}, JWT_SECRET)
+    res.json({status: 'ok', data: token})
   }
   catch(err){
     if(err.code === 11000) return res.json({status: error, error: 'User with the email registered already exists'})
     return res.json({status: 'error', error: err.code});
   }
-  res.json({status: 'ok', data: 'some data'})
+
+  
 })
 
 const port = process.env.PORT || 5500;
