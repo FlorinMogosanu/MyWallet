@@ -225,6 +225,38 @@
       height: 79.5%;
       margin-top: 3.2%;
     }
+    
+    /*categories*/
+    
+    .cat-con p {
+      font-size: 1.5rem;
+    }
+
+    .income-img {
+      margin-left: 1.8rem;
+    }
+    
+    /*left*/
+
+    .left-info {
+      width: 55%;
+      margin-left: 10%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    /*right*/
+  
+    .right-con {
+      margin-right: 12%;
+      width: 30%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .sum-con {
+      order: 2;
+    }
       
     /*Nav*/
   
