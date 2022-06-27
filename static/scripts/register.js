@@ -4,9 +4,9 @@ form.addEventListener('submit', registerUser)
 
 async function registerUser(event){
   event.preventDefault();
-  const user = document.getElementById('username')
+  const username = document.getElementById('username')
   const email = document.getElementById('email')
-  const plainTextPassword = document.getElementById('password')
+  const password = document.getElementById('password')
 
   const result = await fetch('/api/register', {
     method: 'POST',
@@ -24,7 +24,7 @@ async function registerUser(event){
 
   if(result.status === 'ok'){
     location.replace('/static/pages/home.html')
-    localStorage.setItem('token',result.data)
+    localStorage.setItem('token', result.data)
   }
   else{
     alert(result.error)
