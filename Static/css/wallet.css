@@ -338,8 +338,80 @@
       height: 79.5%;
       margin-top: 3.2%;
       flex-direction: row;
+      justify-content: space-between;
     }
-      
+
+    .graf-con {
+      height: 100%;
+      width: 55%;
+    }
+  
+    .cats-con {
+      background-color: var(--clr-white);
+      border-radius: 30px;
+      height: 100%;
+      width: 35%;
+      padding: 2.5rem;
+    }
+  
+    /*balance*/
+  
+    .balance-con {
+      height: 20%;
+      padding: 1.8rem;
+    }
+  
+    .balance-txt {
+      font-size: clamp(1.5rem, 1.6rem + .8vw, 4.2rem);
+    }
+  
+    .sum-con p{
+      font-size: clamp(1.2rem, 1.2rem + .8vw, 2rem);
+    }
+  
+    /*buttons*/
+  
+    .buttons-con {
+      height: 12%;
+    }
+  
+    .incomes-button {
+      font-size: 32px;
+    }
+  
+    .expenses-button {
+      font-size: 32px;
+    }
+  
+    /*chart*/
+  
+    .chart-con {
+      height: 52%;
+    }
+    
+    /*categories*/
+  
+    .cat-txt {
+      font-size: clamp(1.2rem, 1.2rem + .8vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+  
+    .left-con-side {
+      width: 60%;
+    }
+  
+    .right-con-side {
+      width: 20%;
+    }
+  
+    .cat-con p {
+      font-size: 1.5rem;
+    }
+  
+    .cat-clr-con {
+      margin-left: 0rem;
+    }
+
     /*Nav*/
   
     .nav-con {
