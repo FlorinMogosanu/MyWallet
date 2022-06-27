@@ -27,9 +27,8 @@ app.post('/api/register', async (req, res) => {
     console.log('user created successfully',user)
   }
   catch(err){
-    if(err.code === 1100) return res.json({status: error, error: 'User with the email registered already exists'})
-    console.log(err.message)
-    return res.json({status: 'error'});
+    if(err.code === 11000) return res.json({status: error, error: 'User with the email registered already exists'})
+    return res.json({status: 'error', error: err.code});
   }
   res.json({status: 'ok', data: 'some data'})
 })

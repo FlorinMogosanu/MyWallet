@@ -22,6 +22,12 @@ async function registerUser(event){
   .then((res)=> res.json())
   .catch((err)=> alert(err.message))
 
+  if(result.status === 'ok'){
+    location.replace('/static/pages/home.html')
+  }
+  else{
+    alert(result.error)
+  }
 
   console.log(result)
 }
