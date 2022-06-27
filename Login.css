@@ -61,11 +61,11 @@ a  p {
 }
 
 .top-img {
-    animation: top-animation 0.8s linear both;
+    animation: top-animation 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s  both;
 }
 
 .bottom-img {
-    animation: bottom-animation 0.8s linear both;
+    animation: bottom-animation 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s both;
 }
 
 @keyframes top-animation {
