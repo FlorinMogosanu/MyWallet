@@ -14,7 +14,7 @@
     <title>MyWallet</title>
     <link rel="stylesheet" href="/static/css/login.css" />
     <link rel="stylesheet" href="/static/css/var.css" />
-    <script type="module" src="/static/scripts/login.js"></script>
+    <script type="module" src="/static/scripts/register.js"></script>
   </head>
   <body>
     <div class="page">
@@ -24,10 +24,12 @@
         class="top-img"
       />
       <div class="welcome-con">
-        <form id="login-form">
+        <form id="register-form">
+          <input type="text" id="first-name" name="first-name" placeholder="First Name">
+          <input type="text" id="last-name" name="last-name" placeholder="last Name">
           <input type="email" id="email" name = "email" placeholder="Email">
           <input type="password" id="password" name="password" placeholder="password">
-          <input type="submit" id="submit" name ="submit" value="Login">
+          <input type="submit" id="submit" name ="submit" value="Register">
         </form>
       </div>
       <img
