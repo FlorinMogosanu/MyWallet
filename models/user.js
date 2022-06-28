@@ -18,7 +18,78 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  balance:{
+    type: Number,
+    default: 0,
+  },
+  incomeValue: {
+    type: Number,
+    default: 0,
+  },
+  expensesValue: {
+    type: Number,
+    default: 0,
+  },
+  savedValue:{
+    type: Number,
+    default: 0,
+  },
+  transactions:{
+    type: Array,
+    default: [],
+  },
+  incomeCategories:{
+    type: Array,
+    default: [
+
+    ],
+  },
+  outcomeCategories:{
+    type: Array,
+    default: [
+      {
+        name: 'Food',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/expenses/food.png',
+      },
+      {
+        name: 'Transport',
+        value: 0,
+        color: '#E9C6FF',
+        image: '/static/images/expenses/transport.png',
+      },
+      {
+        name: 'Utility',
+        value: 0,
+        color: '#FFEDAB',
+        image: '/static/images/expenses/utility.png',
+      },
+      {
+        name: 'Medication',
+        value: 0,
+        color: '#D4F986',
+        image: '/static/images/expenses/medication.png',
+      },
+      {
+        name: 'Travel',
+        value: 0,
+        color: '#92E5FF',
+        image: '/static/images/expenses/travel.png',
+      },
+      {
+        name: 'Clothes',
+        value: 0,
+        color: '#B3FFE4',
+        image: '/static/images/expenses/clothes.png',
+      },
+    ],
+  },
+  savingItems:{
+    type: Array,
+    default: [],
+  },
 })
 
 const User = mongoose.model('User', userSchema)
