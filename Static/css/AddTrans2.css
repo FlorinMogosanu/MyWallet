@@ -39,18 +39,26 @@
 
   .options {
     background-color: greenyellow;
-    height: 40vh;
+    height: 45vh;
+    width: 100%;
     display: grid;
     gap: 2rem;
   }
 
-  .options button{
-    border: none;
-    text-decoration: none;
+  .show {
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .options input {
+    display: none;
+  }
+
+  .selection:checked + .show{
+    background: var(--clr-grd-purple);
+    color: var(--clr-txt-white);
   }
 
   .options img {

@@ -33,39 +33,50 @@
     width: 90%;
     height: 84%;
     margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /*options*/
 
   .options {
     background-color: greenyellow;
-    height: 40vh;
+    height: 45vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
   }
 
-  .options button{
-    background-color:var(--clr-white);
-    border: none;
-    text-decoration: none;
+  .options label {
+    background-color: var(--clr-white);
+    display: flex;
+    align-items: center;
     border-radius: 30px;
     height: 15%;
     width: 100%;
-    display: flex;
-    align-items: center;
+  }
+
+  .options input {
+    display: none;
+  }
+
+  .selection:checked + .show{
+    background: var(--clr-grd-purple);
+    color: var(--clr-txt-white);
   }
 
   .options img{
-    height: 35%;
-    margin-left: 1rem;
+    height: 2rem;
+    margin-left: 1.2rem;
   }
 
   .options p {
     font-size: 1.8rem;
     font-weight: 500;
-    margin-left: 1rem;
+    margin-left: 1.2rem;
   }
 
   /*transNav*/
@@ -73,6 +84,7 @@
   .transnav-con {
     background-color: aqua;
     height: 6%;
+    width: 100%;
     margin-top: 4.5rem;
     display: flex;
     justify-content: flex-end;
@@ -231,6 +243,14 @@
       width: 90%;
       height: 79.5%;
       margin-top: 3.2%;
+    }
+
+    .options {
+      width: 20%;
+    }
+
+    .transnav-con {
+      width: 80%;
     }
       
     /*Nav*/
