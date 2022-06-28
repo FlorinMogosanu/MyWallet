@@ -22,20 +22,41 @@
         <p>Transacion</p>
       </div>
       <div class="main-con">
-        <div class="options">
-          <button>
+        <form class="options">
+          <input
+            class="selection"
+            type="radio"
+            id="income"
+            name="option"
+            value="income"
+          />
+          <label class="show" for="income">
             <img src="/static/images/plus.png" alt="" />
-            <p>Income</p>
-          </button>
-          <button>
+            <p>Income</p> </label
+          ><br />
+          <input
+            class="selection"
+            type="radio"
+            id="expense"
+            name="option"
+            value="expense"
+          />
+          <label class="show" for="expense">
             <img src="/static/images/plus.png" alt="" />
-            <p>Expenses</p>
-          </button>
-          <button>
+            <p>Expense</p> </label
+          ><br />
+          <input
+            class="selection"
+            type="radio"
+            id="saving"
+            name="option"
+            value="saving"
+          />
+          <label class="show" for="saving">
             <img src="/static/images/plus.png" alt="" />
             <p>Saving</p>
-          </button>
-        </div>
+          </label>
+        </form>
         <div class="transnav-con">
           <!--<button class="button-left">
                     <img src="/static/images/arrow-left.png" alt="">
