@@ -1,7 +1,3 @@
-/* -------------------- transaction 1 --------------------- */
-
-
-
 /*page css*/
 
 .page{
@@ -29,9 +25,7 @@
     font-size: clamp(1.8rem, 1.6rem + .8vw, 2.2rem);
     font-weight: 600;
   }
-  
-  /*main*/
-  
+
   .main-con {
     width: 90%;
     height: 84%;
@@ -41,57 +35,31 @@
     align-items: center;
   }
 
-  /*options*/
-
-  .options {
-    height: 40vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .options label {
-    background-color: var(--clr-white);
-    display: flex;
-    align-items: center;
+  .transnav-con-ts1 button{
+    background-color:var(--clr-white);
+    border: none;
+    text-decoration: none;
     border-radius: 30px;
-    height: 15%;
-    width: 100%;
-  }
-
-  .options input {
-    display: none;
-  }
-
-  .selection:checked + .show{
-    background: var(--clr-grd-purple);
-    color: var(--clr-txt-white);
-  }
-
-  .options img{
-    height: 2rem;
-    margin-left: 1.2rem;
-  }
-
-  .options p {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-left: 1.2rem;
-  }
-
-  /*transNav*/
-
-  .transnav-con {
-    height: 6%;
-    width: 100%;
-    margin-top: 4.5rem;
+    height: 100%;
+    width: 40%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
   }
 
-  .transnav-con button{
+  .transnav-con-ts2 button{
+    background-color:var(--clr-white);
+    border: none;
+    text-decoration: none;
+    border-radius: 30px;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transnav-con-ts3 button{
     background-color:var(--clr-white);
     border: none;
     text-decoration: none;
@@ -117,6 +85,212 @@
   .transnav-con p{
     font-size: 1.2rem;
     font-weight: 500
+  }
+
+  /* -------------------- transaction 1 --------------------- */
+  
+
+  /*options*/
+
+  .options-ts1 {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .options-ts1 label {
+    background-color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    height: 15%;
+    width: 100%;
+  }
+
+  .options-ts1 input {
+    display: none;
+  }
+
+  .selection-ts1:checked + .show-ts1{
+    background: var(--clr-grd-purple);
+    color: var(--clr-txt-white);
+  }
+
+  .options-ts1 img{
+    height: 2rem;
+    margin-left: 1.2rem;
+  }
+
+  .options-ts1 p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 1.2rem;
+  }
+
+  /*transNav*/
+
+  .transnav-con-ts1 {
+    height: 6%;
+    width: 100%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* -------------------- transaction 2 --------------------- */
+
+  /*options*/
+
+  .options-ts2 {
+    height: 40vh;
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .show-ts2 {
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 70%;
+  }
+
+  .options-ts2 input {
+    display: none;
+  }
+
+  .selection-ts2:checked + .show-ts2{ 
+    opacity: 100%;
+  }
+
+  .options-ts2 img {
+    height: 2.6rem;
+  }
+
+  .food {
+    background-color: var(--clr-food);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .transport {
+    background-color: var(--clr-transport);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .utility {
+    background-color: var(--clr-utility);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .medication {
+    background-color: var(--clr-medication);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .clothes {
+    background-color: var(--clr-clothes);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .travel {
+    background-color: var(--clr-travel);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .insurance {
+    background-color: var(--clr-insurance);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .education {
+    background-color: var(--clr-education);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .other {
+    background-color: var(--clr-other);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  /*transNav*/
+
+  .transnav-con-ts2 {
+    width: 100%;
+    height: 6%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  /* -------------------- transaction 3 --------------------- */
+
+  /*options*/
+
+  .options-ts3 {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .options-ts3 form {
+    height:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .options-ts3 label{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .options-ts3 input {
+    height: 60%;
+    border: none;
+    border-radius: 30px;
+    padding: 1rem;
+  }
+
+  .transnav-con-ts3 {
+    height: 6%;
+    width: 100%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: space-between;
   }
 
   /*Nav*/
@@ -247,20 +421,41 @@
       font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem);
       font-weight: 500;
     }
+
+    /* -------------------- transaction 1 --------------------- */
   
     /*main*/
-  
-    .main-con {
-      width: 90%;
-      height: 79.5%;
-      margin-top: 3.2%;
-    }
 
-    .options {
+    .options-ts1 {
       width: 20%;
     }
 
-    .transnav-con {
+    .transnav-con-ts1 {
+      width: 80%;
+    }
+
+    /* -------------------- transaction 2 --------------------- */
+
+    /*main*/
+
+    .options-ts2 {
+      width: 40%;
+    }
+
+    .transnav-con-ts2 {
+      width: 80%;
+    }
+
+
+    /* -------------------- transaction 3 --------------------- */
+
+    /*main*/
+
+    .options-ts3 {
+      width: 40%;
+    }
+
+    .transnav-con-ts3 {
       width: 80%;
     }
       
