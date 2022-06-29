@@ -49,6 +49,8 @@ const expenseCategory = [
 
 nextOne.addEventListener('click', nextOneClickHandler);
 backTwo.addEventListener('click', backTwoClickHandler);
+nextTwo.addEventListener('click', nextTwoClickHandler);
+backThree.addEventListener('click', backThreeClickHandler);
 
 
 function nextOneClickHandler(e){
@@ -81,7 +83,6 @@ function nextOneClickHandler(e){
       form.appendChild(input)
       form.appendChild(label)
       form.appendChild(br)
-
     })
   }
 
@@ -92,4 +93,17 @@ function nextOneClickHandler(e){
 function backTwoClickHandler(e){
   transactionOne.removeAttribute('id')
   transactionTwo.setAttribute('id', 'dnone')
+}
+
+function nextTwoClickHandler(e){
+  const checkOption = document.querySelector('input[name="category"]:checked')
+  if(!checkOption) return alert('Please select an option')
+  console.log(checkOption)
+  transactionThree.removeAttribute('id')
+  transactionTwo.setAttribute('id', 'dnone')
+}
+
+function backThreeClickHandler(e){
+  transactionTwo.removeAttribute('id')
+  transactionThree.setAttribute('id', 'dnone')
 }
