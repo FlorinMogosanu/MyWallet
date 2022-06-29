@@ -29,17 +29,18 @@
   /*main*/
   
   .main-con {
-    background-color: brown;
     width: 90%;
     height: 84%;
     margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /*options*/
 
   .options {
-    background-color: greenyellow;
-    height: 45vh;
+    height: 40vh;
     width: 100%;
     display: grid;
     gap: 2rem;
@@ -50,15 +51,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 80%;
   }
 
   .options input {
     display: none;
   }
 
-  .selection:checked + .show{
-    background: var(--clr-grd-purple);
-    color: var(--clr-txt-white);
+  .selection:checked + .show{ 
+    opacity: 100%;
   }
 
   .options img {
@@ -140,7 +141,6 @@
   /*transNav*/
 
   .transnav-con {
-    background-color: aqua;
     height: 6%;
     margin-top: 4.5rem;
     display: flex;
@@ -300,6 +300,14 @@
       width: 90%;
       height: 79.5%;
       margin-top: 3.2%;
+    }
+
+    .options {
+      width: 40%;
+    }
+
+    .transnav-con {
+      width: 80%;
     }
       
     /*Nav*/

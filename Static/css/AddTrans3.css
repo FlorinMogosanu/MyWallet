@@ -29,17 +29,19 @@
   /*main*/
   
   .main-con {
-    background-color: brown;
     width: 90%;
     height: 84%;
     margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /*options*/
 
   .options {
-    background-color: greenyellow;
-    height: 45vh;
+    height: 40vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -69,7 +71,6 @@
   /*transNav*/
 
   .transnav-con {
-    background-color: aqua;
     height: 6%;
     margin-top: 4.5rem;
     display: flex;
@@ -229,6 +230,14 @@
       width: 90%;
       height: 79.5%;
       margin-top: 3.2%;
+    }
+
+    .options {
+      width: 40%;
+    }
+
+    .transnav-con {
+      width: 80%;
     }
       
     /*Nav*/
