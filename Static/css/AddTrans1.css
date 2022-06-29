@@ -35,60 +35,31 @@
     align-items: center;
   }
 
-  /* -------------------- transaction 1 --------------------- */
-  
-
-  /*options*/
-
-  .options-ts1 {
-    height: 40vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .options-ts1 label {
-    background-color: var(--clr-white);
-    display: flex;
-    align-items: center;
+  .transnav-con-ts1 button{
+    background-color:var(--clr-white);
+    border: none;
+    text-decoration: none;
     border-radius: 30px;
-    height: 15%;
-    width: 100%;
-  }
-
-  .options-ts1 input {
-    display: none;
-  }
-
-  .selection:checked + .show{
-    background: var(--clr-grd-purple);
-    color: var(--clr-txt-white);
-  }
-
-  .options-ts1 img{
-    height: 2rem;
-    margin-left: 1.2rem;
-  }
-
-  .options-ts1 p {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-left: 1.2rem;
-  }
-
-  /*transNav*/
-
-  .transnav-con {
-    height: 6%;
-    width: 100%;
-    margin-top: 4.5rem;
+    height: 100%;
+    width: 40%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
   }
 
-  .transnav-con button{
+  .transnav-con-ts2 button{
+    background-color:var(--clr-white);
+    border: none;
+    text-decoration: none;
+    border-radius: 30px;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .transnav-con-ts3 button{
     background-color:var(--clr-white);
     border: none;
     text-decoration: none;
@@ -116,6 +87,58 @@
     font-weight: 500
   }
 
+  /* -------------------- transaction 1 --------------------- */
+  
+
+  /*options*/
+
+  .options-ts1 {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .options-ts1 label {
+    background-color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    height: 15%;
+    width: 100%;
+  }
+
+  .options-ts1 input {
+    display: none;
+  }
+
+  .selection-ts1:checked + .show-ts1{
+    background: var(--clr-grd-purple);
+    color: var(--clr-txt-white);
+  }
+
+  .options-ts1 img{
+    height: 2rem;
+    margin-left: 1.2rem;
+  }
+
+  .options-ts1 p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 1.2rem;
+  }
+
+  /*transNav*/
+
+  .transnav-con-ts1 {
+    height: 6%;
+    width: 100%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: flex-end;
+  }
 
   /* -------------------- transaction 2 --------------------- */
 
@@ -128,7 +151,7 @@
     gap: 2rem;
   }
 
-  .show {
+  .show-ts2 {
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -140,7 +163,7 @@
     display: none;
   }
 
-  .selection:checked + .show{ 
+  .selection-ts2:checked + .show-ts2{ 
     opacity: 100%;
   }
 
@@ -222,39 +245,12 @@
 
   /*transNav*/
 
-  .transnav-con {
+  .transnav-con-ts2 {
+    width: 100%;
     height: 6%;
     margin-top: 4.5rem;
     display: flex;
     justify-content: space-between;
-  }
-
-  .transnav-con button{
-    background-color:var(--clr-white);
-    border: none;
-    text-decoration: none;
-    border-radius: 30px;
-    height: 100%;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-  .button-left img{
-    height: 35%;
-    margin-right: 5%;
-  }
-
-  .button-right img{
-    height: 35%;
-    margin-left: 5%;
-  }
-
-  .transnav-con p{
-    font-size: 1.2rem;
-    font-weight: 500
   }
 
 
@@ -289,28 +285,13 @@
     padding: 1rem;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .transnav-con-ts3 {
+    height: 6%;
+    width: 100%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
 
   /*Nav*/
   
@@ -444,18 +425,12 @@
     /* -------------------- transaction 1 --------------------- */
   
     /*main*/
-  
-    .main-con {
-      width: 90%;
-      height: 79.5%;
-      margin-top: 3.2%;
-    }
 
-    .options {
+    .options-ts1 {
       width: 20%;
     }
 
-    .transnav-con {
+    .transnav-con-ts1 {
       width: 80%;
     }
 
@@ -463,62 +438,26 @@
 
     /*main*/
 
-    .main-con {
-      width: 90%;
-      height: 79.5%;
-      margin-top: 3.2%;
-    }
-
-    .options {
+    .options-ts2 {
       width: 40%;
     }
 
-    .transnav-con {
+    .transnav-con-ts2 {
       width: 80%;
-    }
-      
-    /*Nav*/
-  
-    .nav-con {
-      width: 15%;
-      height: 100%;
-      left: 0;
-      flex-direction: column;
     }
 
 
     /* -------------------- transaction 3 --------------------- */
 
     /*main*/
-  
-    .main-con {
-      width: 90%;
-      height: 79.5%;
-      margin-top: 3.2%;
-    }
 
-    .options {
+    .options-ts3 {
       width: 40%;
     }
 
-    .transnav-con {
+    .transnav-con-ts3 {
       width: 80%;
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       
     /*Nav*/
   
