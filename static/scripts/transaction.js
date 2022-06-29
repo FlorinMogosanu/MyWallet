@@ -6,7 +6,13 @@ const doneBtn = document.getElementById('done')
 const transactionOne = document.querySelector('.transaction-one')
 const transactionTwo = document.querySelector('.transaction-two')
 const transactionThree = document.querySelector('.transaction-three')
+const incomeRadio = document.getElementById('income-label')
+const expenseRadio = document.getElementById('expense-label')
+const savingRadio = document.getElementById('saving-label')
 const token = localStorage.getItem('token')
+const imgIncome = document.querySelector('#income-label img')
+const imgExpense = document.querySelector('#expense-label img')
+const imgSaving = document.querySelector('#saving-label img')
 
 const expenseCategory = [
     {
@@ -61,6 +67,9 @@ backTwo.addEventListener('click', backTwoClickHandler);
 nextTwo.addEventListener('click', nextTwoClickHandler);
 backThree.addEventListener('click', backThreeClickHandler);
 doneBtn.addEventListener('click', doneClickHandler);
+incomeRadio.addEventListener('click', incomeRadioClickHandler);
+expenseRadio.addEventListener('click', expenseRadioClickHandler);
+savingRadio.addEventListener('click', savingRadioClickHandler);
 
 
 function nextOneClickHandler(e){
@@ -156,4 +165,25 @@ async function doneClickHandler(e){
   else{
     alert(result.error)
   }
+}
+
+function incomeRadioClickHandler(e){
+  
+  imgIncome.src = '/static/images/pluswhite.png'
+  imgExpense.src = '/static/images/plus.png'
+  imgSaving.src = '/static/images/plus.png'
+}
+
+function expenseRadioClickHandler(e){
+  
+  imgIncome.src = '/static/images/plus.png'
+  imgExpense.src = '/static/images/pluswhite.png'
+  imgSaving.src = '/static/images/plus.png'
+}
+
+function savingRadioClickHandler(e){
+  
+  imgIncome.src = '/static/images/plus.png'
+  imgExpense.src = '/static/images/plus.png'
+  imgSaving.src = '/static/images/pluswhite.png'
 }
