@@ -22,6 +22,11 @@ router.post('/:token', async (req, res) =>{
     date: req.body.date,
   }
 
+  if(transaction.type === 'expense'){
+    user.balance = user.balance - transaction.amount
+    user.expenseValue = transaction.amount + user.expenseValue
+  }
+
   user.transactions.unshift(transaction)
   await user.save()
 
