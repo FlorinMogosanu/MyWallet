@@ -1,7 +1,3 @@
-/* -------------------- transaction 1 --------------------- */
-
-
-
 /*page css*/
 
 .page{
@@ -29,9 +25,7 @@
     font-size: clamp(1.8rem, 1.6rem + .8vw, 2.2rem);
     font-weight: 600;
   }
-  
-  /*main*/
-  
+
   .main-con {
     width: 90%;
     height: 84%;
@@ -41,9 +35,12 @@
     align-items: center;
   }
 
+  /* -------------------- transaction 1 --------------------- */
+  
+
   /*options*/
 
-  .options {
+  .options-ts1 {
     height: 40vh;
     width: 100%;
     display: flex;
@@ -52,7 +49,7 @@
     justify-content: space-around;
   }
 
-  .options label {
+  .options-ts1 label {
     background-color: var(--clr-white);
     display: flex;
     align-items: center;
@@ -61,7 +58,7 @@
     width: 100%;
   }
 
-  .options input {
+  .options-ts1 input {
     display: none;
   }
 
@@ -70,12 +67,12 @@
     color: var(--clr-txt-white);
   }
 
-  .options img{
+  .options-ts1 img{
     height: 2rem;
     margin-left: 1.2rem;
   }
 
-  .options p {
+  .options-ts1 p {
     font-size: 1.8rem;
     font-weight: 500;
     margin-left: 1.2rem;
@@ -118,6 +115,202 @@
     font-size: 1.2rem;
     font-weight: 500
   }
+
+
+  /* -------------------- transaction 2 --------------------- */
+
+  /*options*/
+
+  .options-ts2 {
+    height: 40vh;
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .show {
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 70%;
+  }
+
+  .options-ts2 input {
+    display: none;
+  }
+
+  .selection:checked + .show{ 
+    opacity: 100%;
+  }
+
+  .options-ts2 img {
+    height: 2.6rem;
+  }
+
+  .food {
+    background-color: var(--clr-food);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .transport {
+    background-color: var(--clr-transport);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .utility {
+    background-color: var(--clr-utility);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .medication {
+    background-color: var(--clr-medication);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .clothes {
+    background-color: var(--clr-clothes);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .travel {
+    background-color: var(--clr-travel);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .insurance {
+    background-color: var(--clr-insurance);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .education {
+    background-color: var(--clr-education);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .other {
+    background-color: var(--clr-other);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  /*transNav*/
+
+  .transnav-con {
+    height: 6%;
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .transnav-con button{
+    background-color:var(--clr-white);
+    border: none;
+    text-decoration: none;
+    border-radius: 30px;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .button-left img{
+    height: 35%;
+    margin-right: 5%;
+  }
+
+  .button-right img{
+    height: 35%;
+    margin-left: 5%;
+  }
+
+  .transnav-con p{
+    font-size: 1.2rem;
+    font-weight: 500
+  }
+
+
+  /* -------------------- transaction 3 --------------------- */
+
+  /*options*/
+
+  .options-ts3 {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .options-ts3 form {
+    height:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .options-ts3 label{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .options-ts3 input {
+    height: 60%;
+    border: none;
+    border-radius: 30px;
+    padding: 1rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /*Nav*/
   
@@ -247,6 +440,8 @@
       font-size: clamp(1.2rem, 1rem + .8vw, 1.6rem);
       font-weight: 500;
     }
+
+    /* -------------------- transaction 1 --------------------- */
   
     /*main*/
   
@@ -263,6 +458,67 @@
     .transnav-con {
       width: 80%;
     }
+
+    /* -------------------- transaction 2 --------------------- */
+
+    /*main*/
+
+    .main-con {
+      width: 90%;
+      height: 79.5%;
+      margin-top: 3.2%;
+    }
+
+    .options {
+      width: 40%;
+    }
+
+    .transnav-con {
+      width: 80%;
+    }
+      
+    /*Nav*/
+  
+    .nav-con {
+      width: 15%;
+      height: 100%;
+      left: 0;
+      flex-direction: column;
+    }
+
+
+    /* -------------------- transaction 3 --------------------- */
+
+    /*main*/
+  
+    .main-con {
+      width: 90%;
+      height: 79.5%;
+      margin-top: 3.2%;
+    }
+
+    .options {
+      width: 40%;
+    }
+
+    .transnav-con {
+      width: 80%;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     /*Nav*/
   
