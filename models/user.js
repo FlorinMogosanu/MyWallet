@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  expensesValue: {
+  expenseValue: {
     type: Number,
     default: 0,
   },

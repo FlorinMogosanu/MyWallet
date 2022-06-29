@@ -14,9 +14,12 @@
     <title>MyWallet</title>
     <link rel="stylesheet" href="/static/css/AddTrans1.css" />
     <link rel="stylesheet" href="/static/css/var.css" />
+    <script defer src="/static/scripts/transaction.js"></script>
   </head>
   <body>
-    <div class="page">
+
+    <!-- transaction 1 -->
+    <div  class="page transaction-one">
       <div class="top-con">
         <p>Add</p>
         <p>Transacion</p>
@@ -62,8 +65,8 @@
                     <img src="/static/images/arrow-left.png" alt="">
                     <p>Back</p>
                 </button>-->
-          <a href="/static/pages/AddTrans2.html">
-            <button class="button-right">
+
+            <button class="button-right" id="next-one">
               <p>Next</p>
               <img src="/static/images/arrow-right.png" alt="" />
             </button>
@@ -71,6 +74,169 @@
         </div>
       </div>
     </div>
+
+    <!-- transaction 2 -->
+
+    <div class="page transaction-two" id="dnone">
+      <div class="top-con">
+        <p>Add</p>
+        <p>Transacion</p>
+      </div>
+      <div class="main-con">
+        <form class="options" id="category-form">
+          <!-- <input
+            class="selection"
+            type="radio"
+            id="food"
+            name="category"
+            value="food"
+          />
+          <label class="show food" for="food">
+            <img src="/static/images/Expenses/food.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="transport"
+            name="category"
+            value="transport"
+          />
+          <label class="show transport" for="transport">
+            <img src="/static/images/Expenses/transport.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="utility"
+            name="category"
+            value="utility"
+          />
+          <label class="show utility" for="utility">
+            <img src="/static/images/Expenses/utility.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="medication"
+            name="category"
+            value="medication"
+          />
+          <label class="show medication" for="medication">
+            <img src="/static/images/Expenses/medication.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="clothes"
+            name="category"
+            value="clothes"
+          />
+          <label class="show clothes" for="clothes">
+            <img src="/static/images/Expenses/clothes.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="travel"
+            name="category"
+            value="travel"
+          />
+          <label class="show travel" for="travel">
+            <img src="/static/images/Expenses/travel.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="insurance"
+            name="category"
+            value="insurance"
+          />
+          <label class="show insurance" for="insurance">
+            <img src="/static/images/Expenses/insurance.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="education"
+            name="category"
+            value="education"
+          />
+          <label class="show education" for="education">
+            <img src="/static/images/Expenses/education.png" alt="" /> </label
+          ><br />
+
+          <input
+            class="selection"
+            type="radio"
+            id="other"
+            name="category"
+            value="other"
+          />
+          <label class="show other" for="other">
+            <img src="/static/images/Expenses/other.png" alt="" /> </label
+          ><br /> -->
+        </form>
+        <div class="transnav-con">
+            <button class="button-left" id="back-two">
+              <img src="/static/images/arrow-left.png" alt="" />
+              <p>Back</p>
+            </button>
+          </a>
+            <button class="button-right" id="next-two">
+              <p>Next</p>
+              <img src="/static/images/arrow-right.png" alt="" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- transaction 3 -->
+
+    <div class="page transaction-three" id="dnone">
+      <div class="top-con">
+        <p>Add</p>
+        <p>Transacion</p>
+      </div>
+      <div class="main-con">
+        <div class="options">
+          <form class="datecon">
+            <label for="date">Date</label><br />
+            <input type="date" id="date" name="date" />
+          </form>
+          <form class="desccon">
+            <label for="description">Description</label><br />
+            <input type="text" id="description" name="description" />
+          </form>
+          <form class="amcon">
+            <label for="amount">Amount</label><br />
+            <input type="number" id="amount" name="amount" />
+          </form>
+        </div>
+        <div class="transnav-con">
+            <button class="button-left" id="back-three">
+              <img src="/static/images/arrow-left.png" alt="" />
+              <p>Back</p>
+            </button>
+          </a>
+            <button class="button-right" id="done">
+              <p>Done</p>
+              <img src="/static/images/arrow-right.png" alt="" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Nav bar -->
     <div class="nav-con">
       <a href="/static/pages/home.html" class="logo-con">
         <img src="/static/images/logo.png" alt="" class="logo-img" />
