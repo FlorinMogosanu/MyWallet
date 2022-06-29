@@ -6,6 +6,7 @@ const doneBtn = document.getElementById('done')
 const transactionOne = document.querySelector('.transaction-one')
 const transactionTwo = document.querySelector('.transaction-two')
 const transactionThree = document.querySelector('.transaction-three')
+const token = localStorage.getItem('token')
 
 const expenseCategory = [
     {
@@ -46,11 +47,20 @@ const expenseCategory = [
     },
 ]
 
+const transaction = {
+  type: '',
+  category: '',
+  description: '',
+  amount: 0,
+  date: '',
+}
+
 
 nextOne.addEventListener('click', nextOneClickHandler);
 backTwo.addEventListener('click', backTwoClickHandler);
 nextTwo.addEventListener('click', nextTwoClickHandler);
 backThree.addEventListener('click', backThreeClickHandler);
+doneBtn.addEventListener('click', doneClickHandler);
 
 
 function nextOneClickHandler(e){
@@ -83,9 +93,10 @@ function nextOneClickHandler(e){
       form.appendChild(input)
       form.appendChild(label)
       form.appendChild(br)
+
+      transaction.type = 'expense'
     })
   }
-
   transactionOne.setAttribute('id', 'dnone')
   transactionTwo.removeAttribute('id')
 }
@@ -99,6 +110,7 @@ function nextTwoClickHandler(e){
   const checkOption = document.querySelector('input[name="category"]:checked')
   if(!checkOption) return alert('Please select an option')
   console.log(checkOption)
+  transaction.category = checkOption.value
   transactionThree.removeAttribute('id')
   transactionTwo.setAttribute('id', 'dnone')
 }
@@ -106,4 +118,35 @@ function nextTwoClickHandler(e){
 function backThreeClickHandler(e){
   transactionTwo.removeAttribute('id')
   transactionThree.setAttribute('id', 'dnone')
+}
+
+async function doneClickHandler(e){
+  const dateInput = document.getElementById('date')
+  const descriptionInput = document.getElementById('description')
+  const amountInput = document.getElementById('amount')
+
+  
+
+  if(!dateInput.value || !descriptionInput.value || !amountInput.value) return alert('All fields are required')
+
+  transaction.amount = amountInput.value
+  transaction.date = dateInput.value
+  transaction.description = descriptionInput.value
+  console.log(doneBtn)
+
+  const result = await fetch(`/api/transaction/${token}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      type: transaction.type,
+      category: transaction.category,
+      description: transaction.description,
+      amount: parseInt(transaction.amount),
+      date: transaction.date,
+    })
+  }) 
+  .then((res)=> res.json())
+  .catch((err)=> alert(err.message))
 }
