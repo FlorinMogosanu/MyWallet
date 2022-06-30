@@ -4,6 +4,7 @@ const registerUser = require('../routes/registerUser');
 const loginUser = require('../routes/loginUser');
 const user = require('../routes/users')
 const transaction = require('../routes/transactions')
+const saving = require('../routes/saving.js')
 
 module.exports = function(app){
   app.use(bodyParser.json())
@@ -11,4 +12,5 @@ module.exports = function(app){
   app.use('/api/login', loginUser)
   app.use('/api/user', user)
   app.use('/api/transaction', transaction)
+  app.use('/api/saving', saving)
 }

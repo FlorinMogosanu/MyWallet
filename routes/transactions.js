@@ -24,7 +24,7 @@ router.post('/:token', async (req, res) =>{
 
   if(transaction.type === 'expense'){
     user.balance = user.balance - transaction.amount
-    user.expenseValue = transaction.amount + user.expenseValue
+    user.expenseValue = user.expenseValue + transaction.amount
     const category = user.outcomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.outcomeCategories.indexOf(category)
     const newValue = user.outcomeCategories[indexOfCategory].value + transaction.amount
@@ -34,10 +34,24 @@ router.post('/:token', async (req, res) =>{
       color: '#E9C6FF',
       image: '/static/images/expenses/transport.png',
     }
+    user.transactions.unshift(transaction)
+  }
+  else if(transaction.type === 'income'){
+    user.balance = user.balance + transaction.amount
+    user.incomeValue = user.incomeValue + transaction.amount
+    const category = user.incomeCategories.find(cat => cat.name === transaction.category)
+    const indexOfCategory = user.incomeCategories.indexOf(category)
+    const newValue = user.incomeCategories[indexOfCategory].value + transaction.amount
+    user.incomeCategories[indexOfCategory] = {
+      name: transaction.category,
+      value: newValue,
+      color: '#E9C6FF',
+      image: '/static/images/expenses/transport.png',
+    }
+    user.transactions.unshift(transaction)
   }
   
   console.log(user)
-  user.transactions.unshift(transaction)
   await user.save()
 
   res.send({status: 'ok'})
