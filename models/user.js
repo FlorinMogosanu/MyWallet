@@ -42,7 +42,36 @@ const userSchema = new mongoose.Schema({
   incomeCategories:{
     type: Array,
     default: [
-
+      {
+        name: 'Salary',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/income/salary.png',
+      },
+      {
+        name: 'Dividend',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/income/dividend.png',
+      },
+      {
+        name: 'Business',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/income/business.png',
+      },
+      {
+        name: 'Rental',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/income/rental.png',
+      },
+      {
+        name: 'Other',
+        value: 0,
+        color: '#95D8AF',
+        image: '/static/images/income/other.png',
+      },
     ],
   },
   outcomeCategories:{
@@ -106,7 +135,9 @@ const userSchema = new mongoose.Schema({
   },
   savingItems:{
     type: Array,
-    default: [],
+    default: [
+      
+    ],
   },
   currency: {
     type: String,

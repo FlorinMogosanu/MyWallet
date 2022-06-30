@@ -71,6 +71,106 @@ const expenseCategory = [
     }
 ]
 
+const incomeCategory = [
+  {
+    name: 'Salary',
+    value: 0,
+    color: '#95D8AF',
+    image: '/static/images/income/salary.png',
+  },
+  {
+    name: 'Dividend',
+    value: 0,
+    color: '#95D8AF',
+    image: '/static/images/income/dividend.png',
+  },
+  {
+    name: 'Business',
+    value: 0,
+    color: '#95D8AF',
+    image: '/static/images/income/business.png',
+  },
+  {
+    name: 'Rental',
+    value: 0,
+    color: '#95D8AF',
+    image: '/static/images/income/rental.png',
+  },
+  {
+    name: 'Other',
+    value: 0,
+    color: '#95D8AF',
+    image: '/static/images/income/other.png',
+  },
+]
+
+const savingsCategory =[
+  {
+    name: 'Car',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/car.png',
+  },
+  {
+    name: 'Debt',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/debt.png',
+  },
+  {
+    name: 'Emergency',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/emergency.png',
+  },
+  {
+    name: 'Gadgets',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/gadgets.png',
+  },
+  {
+    name: 'House',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/house.png',
+  },
+  {
+    name: 'Retirement',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/retirement.png',
+  },
+  {
+    name: 'Vacation',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/vacation.png',
+  },
+  {
+    name: 'Other',
+    value: 0,
+    savedValue: 0,
+    percent: 0,
+    color: '#EA7878',
+    image: '/static/images/savings/other.png',
+  }
+]
+
 const transaction = {
   type: '',
   category: '',
@@ -117,10 +217,36 @@ function nextOneClickHandler(e){
       label.appendChild(img)
       form.appendChild(input)
       form.appendChild(label)
-
+      
     })
+    transaction.type = 'expense'
   }
-  transaction.type = 'expense'
+  else if(checkOption.value === 'income'){
+    const form = document.getElementById('category-form')
+    form.innerHTML = ''
+
+    incomeCategory.forEach((cat)=>{
+      const input =  document.createElement('input')
+      input.setAttribute('class', 'selection-ts2')
+      input.setAttribute('type', 'radio')
+      input.setAttribute('id', cat.name)
+      input.setAttribute('name', 'category')
+      input.setAttribute('value', cat.name)
+
+      const label = document.createElement('label')
+      label.setAttribute('class', `show-ts2 ${cat.name}`)
+      label.setAttribute('for', cat.name)
+
+      const img = document.createElement('img')
+      img.src = cat.image
+      
+      label.appendChild(img)
+      form.appendChild(input)
+      form.appendChild(label)
+  })
+  transaction.type = 'income'
+}
+
   transactionOne.setAttribute('id', 'dnone')
   transactionTwo.removeAttribute('id')
 }
