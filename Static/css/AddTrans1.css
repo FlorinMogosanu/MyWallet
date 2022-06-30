@@ -29,7 +29,7 @@
   .main-con {
     width: 90%;
     height: 84%;
-    margin-top: 5rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +156,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 70%;
+    opacity: 60%;
   }
 
   .options-ts2 input {
@@ -422,12 +422,19 @@
       font-weight: 500;
     }
 
+    .main-con {
+      width: 90%;
+      height: 79.5%;
+      margin-top: 3.2%;
+    }
+
     /* -------------------- transaction 1 --------------------- */
   
     /*main*/
 
     .options-ts1 {
       width: 40%;
+      margin-top: 6%;
     }
 
     .transnav-con-ts1 {
@@ -440,6 +447,7 @@
 
     .options-ts2 {
       width: 40%;
+      margin-top: 6%;
     }
 
     .transnav-con-ts2 {
@@ -453,6 +461,7 @@
 
     .options-ts3 {
       width: 40%;
+      margin-top: 6%;
     }
 
     .transnav-con-ts3 {

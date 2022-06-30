@@ -46,6 +46,8 @@ a  p {
     color: var(--clr-txt-white);
 }
 
+/*animation*/
+
 .top-img {
     height: 35vh;
     position: absolute;
