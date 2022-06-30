@@ -14,6 +14,8 @@
     <title>MyWallet</title>
     <link rel="stylesheet" href="/static/css/wallet.css" />
     <link rel="stylesheet" href="/static/css/var.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="/static/scripts/wallet.js"></script>
   </head>
   <body>
     <div class="page">
@@ -34,10 +36,7 @@
             <button class="expenses-button">Expenses</button>
           </div>
           <div class="chart-con">
-            <img
-              src="/static/images/Eighty-percent-blue-grey-and-white-pie-chart-on-transparent-background-PNG1.png"
-              alt=""
-            />
+            <canvas id="chart-wallet"></canvas>
           </div>
         </div>
         <div class="cats-con">
