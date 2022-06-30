@@ -25,8 +25,18 @@ router.post('/:token', async (req, res) =>{
   if(transaction.type === 'expense'){
     user.balance = user.balance - transaction.amount
     user.expenseValue = transaction.amount + user.expenseValue
+    const category = user.outcomeCategories.find(cat => cat.name === transaction.category)
+    const indexOfCategory = user.outcomeCategories.indexOf(category)
+    const newValue = user.outcomeCategories[indexOfCategory].value + transaction.amount
+    user.outcomeCategories[indexOfCategory] = {
+      name: transaction.category,
+      value: newValue,
+      color: '#E9C6FF',
+      image: '/static/images/expenses/transport.png',
+    }
   }
-
+  
+  console.log(user)
   user.transactions.unshift(transaction)
   await user.save()
 

@@ -84,6 +84,24 @@ const userSchema = new mongoose.Schema({
         color: '#B3FFE4',
         image: '/static/images/expenses/clothes.png',
       },
+      {
+        name: 'Insurance',
+        value: 0,
+        color: '#EA78BE',
+        image: '/static/images/expenses/insurance.png',
+      },
+      {
+        name: 'Education',
+        value: 0,
+        color: '#7888EA',
+        image: '/static/images/expenses/education.png',
+      },
+      {
+        name: 'Other',
+        value: 0,
+        color: '#EA7878',
+        image: '/static/images/expenses/other.png',
+      }
     ],
   },
   savingItems:{
