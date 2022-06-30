@@ -90,6 +90,10 @@ const userSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  currency: {
+    type: String,
+    default: '$'
+  }
 })
 
 const User = mongoose.model('User', userSchema)

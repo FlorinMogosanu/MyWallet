@@ -16,55 +16,55 @@ const imgSaving = document.querySelector('#saving-label img')
 
 const expenseCategory = [
     {
-      name: 'food',
+      name: 'Food',
       value: 0,
       color: '#95D8AF',
       image: '/static/images/expenses/food.png',
     },
     {
-      name: 'transport',
+      name: 'Transport',
       value: 0,
       color: '#E9C6FF',
       image: '/static/images/expenses/transport.png',
     },
     {
-      name: 'utility',
+      name: 'Utility',
       value: 0,
       color: '#FFEDAB',
       image: '/static/images/expenses/utility.png',
     },
     {
-      name: 'medication',
+      name: 'Medication',
       value: 0,
       color: '#D4F986',
       image: '/static/images/expenses/medication.png',
     },
     {
-      name: 'travel',
+      name: 'Travel',
       value: 0,
       color: '#92E5FF',
       image: '/static/images/expenses/travel.png',
     },
     {
-      name: 'clothes',
+      name: 'Clothes',
       value: 0,
       color: '#B3FFE4',
       image: '/static/images/expenses/clothes.png',
     },
     {
-      name: 'insurance',
+      name: 'Insurance',
       value: 0,
       color: '#EA78BE',
       image: '/static/images/expenses/insurance.png',
     },
     {
-      name: 'education',
+      name: 'Education',
       value: 0,
       color: '#7888EA',
       image: '/static/images/expenses/education.png',
     },
     {
-      name: 'other',
+      name: 'Other',
       value: 0,
       color: '#EA7878',
       image: '/static/images/expenses/other.png',
@@ -118,9 +118,9 @@ function nextOneClickHandler(e){
       form.appendChild(input)
       form.appendChild(label)
 
-      transaction.type = 'expense'
     })
   }
+  transaction.type = 'expense'
   transactionOne.setAttribute('id', 'dnone')
   transactionTwo.removeAttribute('id')
 }
@@ -135,6 +135,7 @@ function nextTwoClickHandler(e){
   if(!checkOption) return alert('Please select an option')
   console.log(checkOption)
   transaction.category = checkOption.value
+  console.log(transaction)
   transactionThree.removeAttribute('id')
   transactionTwo.setAttribute('id', 'dnone')
 }
@@ -156,7 +157,7 @@ async function doneClickHandler(e){
   transaction.amount = amountInput.value
   transaction.date = dateInput.value
   transaction.description = descriptionInput.value
-  console.log(doneBtn)
+  console.log(transaction)
 
   const result = await fetch(`/api/transaction/${token}`, {
     method: 'POST',

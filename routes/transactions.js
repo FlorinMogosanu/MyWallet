@@ -16,7 +16,7 @@ router.post('/:token', async (req, res) =>{
 
   const transaction = {
     type: req.body.type,
-    category: req.body.type,
+    category: req.body.category,
     description: req.body.description,
     amount: req.body.amount,
     date: req.body.date,
