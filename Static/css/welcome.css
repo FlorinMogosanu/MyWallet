@@ -91,3 +91,53 @@ a  p {
               transform-origin: right;
     }
   }
+
+
+
+
+
+
+
+  @media screen and (min-width: 1024px) {
+
+    .page {
+        align-items: flex-end;
+    }
+
+    .welcome-con {
+        margin-right: 10%;
+        width: 30%;
+        animation: fade-in 1s cubic-bezier(0.550, 0.055, 0.675, 0.190) 0.4s both;
+    }
+
+    .top-img {
+        display: none;
+    }
+
+    .bottom-img {
+        height: 80vh;
+        bottom: 400px;
+        left: 1000px;
+        animation: bottom-animation 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s both;
+    }
+
+    @keyframes bottom-animation {
+        0% {
+                  transform: rotate(0) translateX(0) translateY(0);
+                  transform-origin: left;
+        }
+        100% {
+                  transform: rotate(-65deg) translateX(-900px) translateY(-550px);
+                  transform-origin: left;
+        }
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+}
