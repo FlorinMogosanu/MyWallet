@@ -51,6 +51,24 @@ const expenseCategory = [
       color: '#B3FFE4',
       image: '/static/images/expenses/clothes.png',
     },
+    {
+      name: 'insurance',
+      value: 0,
+      color: '#EA78BE',
+      image: '/static/images/expenses/insurance.png',
+    },
+    {
+      name: 'education',
+      value: 0,
+      color: '#7888EA',
+      image: '/static/images/expenses/education.png',
+    },
+    {
+      name: 'other',
+      value: 0,
+      color: '#EA7878',
+      image: '/static/images/expenses/other.png',
+    }
 ]
 
 const transaction = {
@@ -83,25 +101,22 @@ function nextOneClickHandler(e){
 
     expenseCategory.forEach((cat)=>{
       const input =  document.createElement('input')
-      input.setAttribute('class', 'selection')
+      input.setAttribute('class', 'selection-ts2')
       input.setAttribute('type', 'radio')
       input.setAttribute('id', cat.name)
       input.setAttribute('name', 'category')
       input.setAttribute('value', cat.name)
 
       const label = document.createElement('label')
-      label.setAttribute('class', `show ${cat.name}`)
+      label.setAttribute('class', `show-ts2 ${cat.name}`)
       label.setAttribute('for', cat.name)
 
       const img = document.createElement('img')
       img.src = cat.image
-
-      const br = document.createElement('br')
       
       label.appendChild(img)
       form.appendChild(input)
       form.appendChild(label)
-      form.appendChild(br)
 
       transaction.type = 'expense'
     })
