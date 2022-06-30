@@ -109,7 +109,7 @@ const savingsCategory =[
     name: 'Car',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/car.png',
   },
@@ -117,7 +117,7 @@ const savingsCategory =[
     name: 'Debt',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/debt.png',
   },
@@ -125,7 +125,7 @@ const savingsCategory =[
     name: 'Emergency',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/emergency.png',
   },
@@ -133,7 +133,7 @@ const savingsCategory =[
     name: 'Gadgets',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/gadgets.png',
   },
@@ -141,7 +141,7 @@ const savingsCategory =[
     name: 'House',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/house.png',
   },
@@ -149,7 +149,7 @@ const savingsCategory =[
     name: 'Retirement',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/retirement.png',
   },
@@ -157,7 +157,7 @@ const savingsCategory =[
     name: 'Vacation',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/vacation.png',
   },
@@ -165,7 +165,7 @@ const savingsCategory =[
     name: 'Other',
     value: 0,
     savedValue: 0,
-    percent: 0,
+    percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/other.png',
   }
@@ -177,6 +177,15 @@ const transaction = {
   description: '',
   amount: 0,
   date: '',
+}
+
+const saving = {
+  name: '',
+  value: 0,
+  savedValue: 0,
+  percentage: 0,
+  color: '',
+  image: '',
 }
 
 
@@ -246,6 +255,30 @@ function nextOneClickHandler(e){
   })
   transaction.type = 'income'
 }
+  else if(checkOption.value === 'saving'){
+    const form = document.getElementById('category-form')
+    form.innerHTML = ''
+
+    savingsCategory.forEach((cat)=>{
+      const input =  document.createElement('input')
+      input.setAttribute('class', 'selection-ts2')
+      input.setAttribute('type', 'radio')
+      input.setAttribute('id', cat.name)
+      input.setAttribute('name', 'saving')
+      input.setAttribute('value', cat.name)
+
+      const label = document.createElement('label')
+      label.setAttribute('class', `show-ts2 ${cat.name}`)
+      label.setAttribute('for', cat.name)
+
+      const img = document.createElement('img')
+      img.src = cat.image
+      
+      label.appendChild(img)
+      form.appendChild(input)
+      form.appendChild(label)
+    })
+  }
 
   transactionOne.setAttribute('id', 'dnone')
   transactionTwo.removeAttribute('id')
@@ -257,11 +290,92 @@ function backTwoClickHandler(e){
 }
 
 function nextTwoClickHandler(e){
-  const checkOption = document.querySelector('input[name="category"]:checked')
+  const tsContainer = document.getElementById('ts3-container')
+  const checkOption = document.querySelector('input.selection-ts2:checked')
   if(!checkOption) return alert('Please select an option')
-  console.log(checkOption)
-  transaction.category = checkOption.value
-  console.log(transaction)
+
+  if(checkOption.name === 'category') {
+    transaction.category = checkOption.value
+    tsContainer.innerHTML = ''
+
+    const formDate = document.createElement('form')
+    formDate.setAttribute('class', 'datecon')
+    const dateLabel = document.createElement('label')
+    dateLabel.setAttribute('for', 'date')
+    dateLabel.innerHTML = 'Date'
+    const dateInput = document.createElement('input')
+    dateInput.setAttribute('type', 'date')
+    dateInput.setAttribute('id', 'date')
+    dateInput.setAttribute('name', 'date')
+    formDate.appendChild(dateLabel)
+    formDate.appendChild(dateInput)
+
+    const formDesc = document.createElement('form')
+    formDesc.setAttribute('class', 'descon')
+    const descLabel = document.createElement('label')
+    descLabel.setAttribute('for', 'description')
+    descLabel.innerHTML = 'Description'
+    const descInput = document.createElement('input')
+    descInput.setAttribute('type', 'text')
+    descInput.setAttribute('id', 'description')
+    descInput.setAttribute('name', 'description')
+    formDesc.appendChild(descLabel)
+    formDesc.appendChild(descInput)
+
+    const formAmount = document.createElement('form')
+    formAmount.setAttribute('class', 'amcon')
+    const amountLabel = document.createElement('label')
+    amountLabel.setAttribute('for', 'amount')
+    amountLabel.innerHTML = 'Amount'
+    const amountInput = document.createElement('input')
+    amountInput.setAttribute('type', 'number')
+    amountInput.setAttribute('id', 'amount')
+    amountInput.setAttribute('name', 'amount')
+    formAmount.appendChild(amountLabel)
+    formAmount.appendChild(amountInput)
+
+
+    tsContainer.appendChild(formDate)
+    tsContainer.appendChild(formDesc)
+    tsContainer.appendChild(formAmount)
+  }
+  else if(checkOption.name === 'saving'){
+    const selectedCat = savingsCategory.find((cat)=> cat.name === checkOption.value)
+    saving.name = selectedCat.name
+    saving.color = selectedCat.color
+    saving.image = selectedCat.image
+
+    tsContainer.innerHTML= ''
+
+    const formVal = document.createElement('form')
+    formVal.setAttribute('class', 'valcon')
+    const valLabel = document.createElement('label')
+    valLabel.setAttribute('for', 'value')
+    valLabel.innerHTML = 'Amount to save'
+    const valInput = document.createElement('input')
+    valInput.setAttribute('type', 'number')
+    valInput.setAttribute('id', 'value')
+    valInput.setAttribute('name', 'value')
+    formVal.appendChild(valLabel)
+    formVal.appendChild(valInput)
+
+    const formPercentage = document.createElement('form')
+    formPercentage.setAttribute('class', 'percentagecon')
+    const percentageLabel = document.createElement('label')
+    percentageLabel.setAttribute('for', 'percentage')
+    percentageLabel.innerHTML = 'Percentage extracted from income'
+    const percentageInput = document.createElement('input')
+    percentageInput.setAttribute('type', 'number')
+    percentageInput.setAttribute('id', 'percentage')
+    percentageInput.setAttribute('name', 'percentage')
+    formPercentage.appendChild(percentageLabel)
+    formPercentage.appendChild(percentageInput)
+
+    tsContainer.appendChild(formVal)
+    tsContainer.appendChild(formPercentage)
+  }
+  
+
   transactionThree.removeAttribute('id')
   transactionTwo.setAttribute('id', 'dnone')
 }
