@@ -427,11 +427,11 @@
     /*main*/
 
     .options-ts1 {
-      width: 20%;
+      width: 40%;
     }
 
     .transnav-con-ts1 {
-      width: 80%;
+      width: 40%;
     }
 
     /* -------------------- transaction 2 --------------------- */
@@ -443,7 +443,7 @@
     }
 
     .transnav-con-ts2 {
-      width: 80%;
+      width: 40%;
     }
 
 
@@ -456,7 +456,7 @@
     }
 
     .transnav-con-ts3 {
-      width: 80%;
+      width: 40%;
     }
       
     /*Nav*/
