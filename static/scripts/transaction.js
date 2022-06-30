@@ -296,6 +296,8 @@ function nextTwoClickHandler(e){
 
   if(checkOption.name === 'category') {
     transaction.category = checkOption.value
+    tsContainer.dataset = {}
+    tsContainer.dataset.cat = 'transaction'
     tsContainer.innerHTML = ''
 
     const formDate = document.createElement('form')
@@ -340,12 +342,15 @@ function nextTwoClickHandler(e){
     tsContainer.appendChild(formAmount)
   }
   else if(checkOption.name === 'saving'){
+    tsContainer.dataset = {}
+    tsContainer.dataset.cat = 'saving'
+    tsContainer.innerHTML= ''
+
     const selectedCat = savingsCategory.find((cat)=> cat.name === checkOption.value)
     saving.name = selectedCat.name
     saving.color = selectedCat.color
     saving.image = selectedCat.image
 
-    tsContainer.innerHTML= ''
 
     const formVal = document.createElement('form')
     formVal.setAttribute('class', 'valcon')
@@ -386,40 +391,81 @@ function backThreeClickHandler(e){
 }
 
 async function doneClickHandler(e){
-  const dateInput = document.getElementById('date')
-  const descriptionInput = document.getElementById('description')
-  const amountInput = document.getElementById('amount')
+  const tsContainer = document.getElementById('ts3-container')
 
-  
+  if(tsContainer.dataset.cat === 'transction'){
 
-  if(!dateInput.value || !descriptionInput.value || !amountInput.value) return alert('All fields are required')
+    const dateInput = document.getElementById('date')
+    const descriptionInput = document.getElementById('description')
+    const amountInput = document.getElementById('amount')
 
-  transaction.amount = amountInput.value
-  transaction.date = dateInput.value
-  transaction.description = descriptionInput.value
-  console.log(transaction)
+    
 
-  const result = await fetch(`/api/transaction/${token}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      type: transaction.type,
-      category: transaction.category,
-      description: transaction.description,
-      amount: parseInt(transaction.amount),
-      date: transaction.date,
-    })
-  }) 
-  .then((res)=> res.json())
-  .catch((err)=> alert(err.message))
+    if(!dateInput.value || !descriptionInput.value || !amountInput.value) return alert('All fields are required')
 
-  if(result.status === 'ok'){
-    location.replace('/static/pages/home.html')
+    
+    transaction.amount = amountInput.value
+    transaction.date = dateInput.value
+    transaction.description = descriptionInput.value
+    console.log(transaction)
+
+    const result = await fetch(`/api/transaction/${token}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: transaction.type,
+        category: transaction.category,
+        description: transaction.description,
+        amount: parseInt(transaction.amount),
+        date: transaction.date,
+      })
+    }) 
+    .then((res)=> res.json())
+    .catch((err)=> alert(err.message))
+
+    if(result.status === 'ok'){
+      location.replace('/static/pages/home.html')
+    }
+    else{
+      alert(result.error)
+    }
   }
-  else{
-    alert(result.error)
+  else if(tsContainer.dataset.cat === 'saving'){
+    const valInput = document.getElementById('value')
+    const percentageInput = document.getElementById('percentage')
+
+    if(!valInput.value || !percentageInput.value) return alert('All fields are required')
+
+    saving.value = parseInt(valInput.value)
+    saving.percentage = parseInt(percentageInput.value)
+
+    console.log(saving)
+
+    const result = await fetch(`/api/saving/${token}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: saving.name,
+        value: saving.value,
+        savedValue: 0,
+        percentage: saving.percentage,
+        color: saving.color,
+        image: saving.image,
+      })
+    }) 
+    .then((res)=> res.json())
+    .catch((err)=> alert(err.message))
+
+    if(result.status === 'ok'){
+      location.replace('/static/pages/home.html')
+    }
+    else{
+      alert(result.error)
+    }
   }
 }
 
