@@ -37,17 +37,40 @@ router.post('/:token', async (req, res) =>{
     user.transactions.unshift(transaction)
   }
   else if(transaction.type === 'income'){
-    user.balance = user.balance + transaction.amount
-    user.incomeValue = user.incomeValue + transaction.amount
     const category = user.incomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.incomeCategories.indexOf(category)
     const newValue = user.incomeCategories[indexOfCategory].value + transaction.amount
+    let demoValue
     user.incomeCategories[indexOfCategory] = {
       name: transaction.category,
       value: newValue,
-      color: '#E9C6FF',
-      image: '/static/images/expenses/transport.png',
+      color: user.incomeCategories[indexOfCategory].color,
+      image: user.incomeCategories[indexOfCategory].image,
     }
+    user.incomeValue = user.incomeValue + transaction.amount
+
+    if(user.savingItems.length > 0){
+      user.savingItems.forEach((item)=>{
+        const savedAmount = transaction.amount * (item.percentage / 100)
+        const indexOfItem = user.savingItems.indexOf(item)
+        demoValue = transaction.amount - savedAmount
+        const saved = user.savingItems[indexOfItem].savedValue + savedAmount
+
+        user.savingItems[indexOfItem] = {
+          name: item.name,
+          value: item.value,
+          savedValue: saved,
+          percentage: item.percentage,
+          color: item.color,
+          image: item.image
+        }
+        
+        if(item.value === user.savingItems[indexOfItem].savedValue){
+          user.savingItems.splice(indexOfItem, 1)
+        }
+      })
+    }
+    user.balance = user.balance + demoValue
     user.transactions.unshift(transaction)
   }
   

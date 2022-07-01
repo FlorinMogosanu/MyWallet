@@ -177,6 +177,8 @@ const transaction = {
   description: '',
   amount: 0,
   date: '',
+  color: '',
+  image: '',
 }
 
 const saving = {
@@ -215,6 +217,7 @@ function nextOneClickHandler(e){
       input.setAttribute('id', cat.name)
       input.setAttribute('name', 'category')
       input.setAttribute('value', cat.name)
+      input.dataset.cat = 'expense'
 
       const label = document.createElement('label')
       label.setAttribute('class', `show-ts2 ${cat.name}`)
@@ -241,6 +244,7 @@ function nextOneClickHandler(e){
       input.setAttribute('id', cat.name)
       input.setAttribute('name', 'category')
       input.setAttribute('value', cat.name)
+      input.dataset.cat = 'income'
 
       const label = document.createElement('label')
       label.setAttribute('class', `show-ts2 ${cat.name}`)
@@ -298,6 +302,8 @@ function nextTwoClickHandler(e){
     tsContainer.dataset = {}
     tsContainer.dataset.cat = 'transaction'
     transaction.category = checkOption.value
+
+
     
 
     tsContainer.innerHTML = ''
