@@ -20,54 +20,63 @@ const expenseCategory = [
       value: 0,
       color: '#95D8AF',
       image: '/static/images/expenses/food.png',
+      class: 'food'
     },
     {
       name: 'Transport',
       value: 0,
       color: '#E9C6FF',
       image: '/static/images/expenses/transport.png',
+      class: 'transport'
     },
     {
       name: 'Utility',
       value: 0,
       color: '#FFEDAB',
       image: '/static/images/expenses/utility.png',
+      class: 'utility'
     },
     {
       name: 'Medication',
       value: 0,
       color: '#D4F986',
       image: '/static/images/expenses/medication.png',
+      class: 'medication'
     },
     {
       name: 'Travel',
       value: 0,
       color: '#92E5FF',
       image: '/static/images/expenses/travel.png',
+      class: 'travel'
     },
     {
       name: 'Clothes',
       value: 0,
       color: '#B3FFE4',
       image: '/static/images/expenses/clothes.png',
+      class: 'clothes'
     },
     {
       name: 'Insurance',
       value: 0,
       color: '#EA78BE',
       image: '/static/images/expenses/insurance.png',
+      class: 'insurance'
     },
     {
       name: 'Education',
       value: 0,
       color: '#7888EA',
       image: '/static/images/expenses/education.png',
+      class: 'education'
     },
     {
       name: 'Other',
       value: 0,
       color: '#EA7878',
       image: '/static/images/expenses/other.png',
+      class: 'other-expense'
     }
 ]
 
@@ -77,30 +86,35 @@ const incomeCategory = [
     value: 0,
     color: '#95D8AF',
     image: '/static/images/income/salary.png',
+    class: 'salary'
   },
   {
     name: 'Dividend',
     value: 0,
     color: '#95D8AF',
     image: '/static/images/income/dividend.png',
+    class: 'dividend'
   },
   {
     name: 'Business',
     value: 0,
     color: '#95D8AF',
     image: '/static/images/income/business.png',
+    class: 'business'
   },
   {
     name: 'Rental',
     value: 0,
     color: '#95D8AF',
     image: '/static/images/income/rental.png',
+    class: 'rental'
   },
   {
     name: 'Other',
     value: 0,
     color: '#95D8AF',
     image: '/static/images/income/other.png',
+    class: 'other-income'
   },
 ]
 
@@ -112,6 +126,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/car.png',
+    class: 'car'
   },
   {
     name: 'Debt',
@@ -120,6 +135,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/debt.png',
+    class: 'debt'
   },
   {
     name: 'Emergency',
@@ -128,6 +144,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/emergency.png',
+    class: 'emergency'
   },
   {
     name: 'Gadgets',
@@ -136,6 +153,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/gadgets.png',
+    class: 'gadgets'
   },
   {
     name: 'House',
@@ -144,6 +162,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/house.png',
+    class: 'house'
   },
   {
     name: 'Retirement',
@@ -152,6 +171,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/retirement.png',
+    class: 'retirement'
   },
   {
     name: 'Vacation',
@@ -160,6 +180,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/vacation.png',
+    class: 'vacation'
   },
   {
     name: 'Other',
@@ -168,6 +189,7 @@ const savingsCategory =[
     percentage: 0,
     color: '#EA7878',
     image: '/static/images/savings/other.png',
+    class: 'other-saving'
   }
 ]
 
@@ -212,16 +234,16 @@ function nextOneClickHandler(e){
 
     expenseCategory.forEach((cat)=>{
       const input =  document.createElement('input')
-      input.setAttribute('class', 'selection-ts2')
+      input.setAttribute('class', `selection-ts2 ${cat.class}`)
       input.setAttribute('type', 'radio')
-      input.setAttribute('id', cat.name)
+      input.setAttribute('id', cat.class)
       input.setAttribute('name', 'category')
       input.setAttribute('value', cat.name)
       input.dataset.cat = 'expense'
 
       const label = document.createElement('label')
-      label.setAttribute('class', `show-ts2 ${cat.name}`)
-      label.setAttribute('for', cat.name)
+      label.setAttribute('class', `show-ts2 ${cat.class}`)
+      label.setAttribute('for', cat.class)
 
       const img = document.createElement('img')
       img.src = cat.image
@@ -241,14 +263,14 @@ function nextOneClickHandler(e){
       const input =  document.createElement('input')
       input.setAttribute('class', 'selection-ts2')
       input.setAttribute('type', 'radio')
-      input.setAttribute('id', cat.name)
+      input.setAttribute('id', cat.class)
       input.setAttribute('name', 'category')
       input.setAttribute('value', cat.name)
       input.dataset.cat = 'income'
 
       const label = document.createElement('label')
-      label.setAttribute('class', `show-ts2 ${cat.name}`)
-      label.setAttribute('for', cat.name)
+      label.setAttribute('class', `show-ts2 ${cat.class}`)
+      label.setAttribute('for', cat.class)
 
       const img = document.createElement('img')
       img.src = cat.image
@@ -265,15 +287,15 @@ function nextOneClickHandler(e){
 
     savingsCategory.forEach((cat)=>{
       const input =  document.createElement('input')
-      input.setAttribute('class', 'selection-ts2')
+      input.setAttribute('class', `selection-ts2 ${cat.class}`)
       input.setAttribute('type', 'radio')
-      input.setAttribute('id', cat.name)
+      input.setAttribute('id', cat.class)
       input.setAttribute('name', 'saving')
       input.setAttribute('value', cat.name)
 
       const label = document.createElement('label')
-      label.setAttribute('class', `show-ts2 ${cat.name}`)
-      label.setAttribute('for', cat.name)
+      label.setAttribute('class', `show-ts2 ${cat.class}`)
+      label.setAttribute('for', cat.class)
 
       const img = document.createElement('img')
       img.src = cat.image
@@ -302,10 +324,7 @@ function nextTwoClickHandler(e){
     tsContainer.dataset = {}
     tsContainer.dataset.cat = 'transaction'
     transaction.category = checkOption.value
-
-
     
-
     tsContainer.innerHTML = ''
     const formDate = document.createElement('form')
     formDate.setAttribute('class', 'datecon')

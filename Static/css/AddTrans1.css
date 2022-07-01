@@ -171,7 +171,7 @@
     height: 2.6rem;
   }
 
-  .Food {
+  .food {
     background-color: var(--clr-food);
     grid-column-start: 1;
     grid-column-end: 2;
@@ -179,7 +179,7 @@
     grid-row-end: 2;
   }
 
-  .Transport {
+  .transport {
     background-color: var(--clr-transport);
     grid-column-start: 2;
     grid-column-end: 3;
@@ -187,7 +187,7 @@
     grid-row-end: 2;
   }
 
-  .Utility {
+  .utility {
     background-color: var(--clr-utility);
     grid-column-start: 3;
     grid-column-end: 4;
@@ -195,7 +195,7 @@
     grid-row-end: 2;
   }
 
-  .Medication {
+  .medication {
     background-color: var(--clr-medication);
     grid-column-start: 1;
     grid-column-end: 2;
@@ -203,7 +203,7 @@
     grid-row-end: 3;
   }
 
-  .Clothes {
+  .clothes {
     background-color: var(--clr-clothes);
     grid-column-start: 2;
     grid-column-end: 3;
@@ -211,7 +211,7 @@
     grid-row-end: 3;
   }
 
-  .Travel {
+  .travel {
     background-color: var(--clr-travel);
     grid-column-start: 3;
     grid-column-end: 4;
@@ -219,7 +219,7 @@
     grid-row-end: 3;
   }
 
-  .Insurance {
+  .insurance {
     background-color: var(--clr-insurance);
     grid-column-start: 1;
     grid-column-end: 2;
@@ -227,7 +227,7 @@
     grid-row-end: 4;
   }
 
-  .Education {
+  .education {
     background-color: var(--clr-education);
     grid-column-start: 2;
     grid-column-end: 3;
@@ -235,7 +235,7 @@
     grid-row-end: 4;
   }
 
-  .Other {
+  .other {
     background-color: var(--clr-other);
     grid-column-start: 3;
     grid-column-end: 4;
