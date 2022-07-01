@@ -393,7 +393,7 @@ function backThreeClickHandler(e){
 async function doneClickHandler(e){
   const tsContainer = document.getElementById('ts3-container')
 
-  if(tsContainer.dataset.cat === 'transction'){
+  if(tsContainer.dataset.cat === 'transaction'){
 
     const dateInput = document.getElementById('date')
     const descriptionInput = document.getElementById('description')
