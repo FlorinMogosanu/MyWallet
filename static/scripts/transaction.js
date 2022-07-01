@@ -295,11 +295,12 @@ function nextTwoClickHandler(e){
   if(!checkOption) return alert('Please select an option')
 
   if(checkOption.name === 'category') {
-    transaction.category = checkOption.value
     tsContainer.dataset = {}
     tsContainer.dataset.cat = 'transaction'
-    tsContainer.innerHTML = ''
+    transaction.category = checkOption.value
+    
 
+    tsContainer.innerHTML = ''
     const formDate = document.createElement('form')
     formDate.setAttribute('class', 'datecon')
     const dateLabel = document.createElement('label')
