@@ -40,7 +40,7 @@ router.post('/:token', async (req, res) =>{
     const category = user.incomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.incomeCategories.indexOf(category)
     const newValue = user.incomeCategories[indexOfCategory].value + transaction.amount
-    let demoValue
+    let demoValue = 0
     user.incomeCategories[indexOfCategory] = {
       name: transaction.category,
       value: newValue,
