@@ -149,6 +149,9 @@
     width: 100%;
     display: grid;
     gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 
   .show-ts2 {
@@ -179,22 +182,42 @@
 
   .salary {
     background-color: var(--clr-salary);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
   
   .dividend {
     background-color: var(--clr-dividend);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .business {
     background-color: var(--clr-business);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .rental {
     background-color: var(--clr-rental);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
 
   .other-income {
     background-color: var(--clr-other);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
 
 
@@ -276,14 +299,26 @@
 
   .car {
     background-color: var(--clr-car);
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .debt {
     background-color: var(--clr-debt);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .emergency {
     background-color: var(--clr-emergency);
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .gadgets {
