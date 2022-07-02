@@ -40,7 +40,7 @@ router.post('/:token', async (req, res) =>{
     const category = user.incomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.incomeCategories.indexOf(category)
     const newValue = user.incomeCategories[indexOfCategory].value + transaction.amount
-    let demoValue
+    let demoValue = 0
     user.incomeCategories[indexOfCategory] = {
       name: transaction.category,
       value: newValue,
@@ -48,6 +48,7 @@ router.post('/:token', async (req, res) =>{
       image: user.incomeCategories[indexOfCategory].image,
     }
     user.incomeValue = user.incomeValue + transaction.amount
+
 
     if(user.savingItems.length > 0){
       user.savingItems.forEach((item)=>{
@@ -76,7 +77,7 @@ router.post('/:token', async (req, res) =>{
     user.transactions.unshift(transaction)
   }
   
-  console.log(user)
+  // console.log(user)
   await user.save()
 
   res.send({status: 'ok'})
