@@ -72,7 +72,9 @@ router.post('/:token', async (req, res) =>{
         }
       })
     }
-    user.balance = user.balance + demoValue
+    if(demoValue === 0) user.balance = user.balance + transaction.amount
+    else if (demoValue > 0) user.balance = user.balance + demoValue
+    
     user.transactions.unshift(transaction)
   }
   

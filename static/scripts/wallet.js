@@ -82,69 +82,67 @@ async function getUser(){
         imageExpense[i] = categoriesOutcome[i].imageUrl;
     }
 
-    console.log(dataExpense, labelExpense)
+    console.log(dataExpense, labelExpense, colorExpense)
 
   }
 
   function generateChart(currency){
     const data = {
-        labels: labelExpense,
-        datasets: [{
-          label: 'Label',
-          data: dataExpense,
-          backgroundColor: colorExpense,
-          borderColor: colorExpense,
-          borderWidth: 1,
-          cutout: '80%',
+      labels: labelIncome,
+      datasets: [{
+        label: 'Label',
+        data: dataIncome,
+        backgroundColor: colorIncome,
+        borderColor: colorIncome,
+        borderWidth: 1,
+        cutout: '80%',
+      }]
+    };
+
+    const counterWallet = {
+      id: 'counter',
+      afterDatasetsDraw(chart, args, options) {
+          const { ctx, data, chartArea: {top, bottom, right, left, width, height} } = chart;  
+          ctx.save();
+          ctx.font = options.fontSize + 'px ' + options.fontFamily;
+          ctx.textAlign = 'center';
+          ctx.fillStyle = options.fontColor;
+          ctx.fillText('$' + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
+          ctx.restore();
+  
+          ctx.font = options.fontSize + 'px ' + options.fontFamily;
+          ctx.textAlign = 'center';
+          ctx.fillStyle = 'gray';
+          ctx.fillText(data.labels[0], width / 2, top + (height / 2)+ (30 * 0.34)+32.5);
           
-        }]
-      };
-
-      const counterWallet = {
-        id: 'counter',
-        afterDatasetsDraw(chart, args, options) {
-            const { ctx, data, chartArea: {top, bottom, right, left, width, height} } = chart;  
-            ctx.save();
-            ctx.font = options.fontSize + 'px ' + options.fontFamily;
-            ctx.textAlign = 'center';
-            ctx.fillStyle = options.fontColor;
-            ctx.fillText(currency + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
-            ctx.restore();
-    
-            ctx.font = options.fontSize + 'px ' + options.fontFamily;
-            ctx.textAlign = 'center';
-            ctx.fillStyle = 'gray';
-            ctx.fillText(data.labels[0], width / 2, top + (height / 2)+ (30 * 0.34)+32.5);
-            
-        }
       }
+    }
 
-      const configWallet = {
-        type: 'doughnut',
-        data: data,
-        options: {
-          plugins: {
-              tooltip:{
-                enabled: false,
-              },
-              legend:{
-                  display:false,
-              },
-              counter: {
-                  fontColor: 'black',
-                  fontSize: 50,
-                  fontFamily: 'sans-serif'
-              }
-          }
-        },
-        plugins: [counterWallet],
-      };
+    const configWallet = {
+      type: 'doughnut',
+      data: data,
+      options: {
+        plugins: {
+            tooltip:{
+              enabled: false,
+            },
+            legend:{
+                display:false,
+            },
+            counter: {
+                fontColor: 'black',
+                fontSize: 50,
+                fontFamily: 'sans-serif'
+            }
+        }
+      },
+      plugins: [counterWallet],
+    };
 
-
-      const walletCategoryChart = new Chart(
-        document.getElementById('chart-wallet'),
-        configWallet
-      );
+    const walletCategoryChart = new Chart(
+      document.getElementById('chart'),
+      configWallet
+    );
   }
 
   getUser()
