@@ -31,8 +31,8 @@ router.post('/:token', async (req, res) =>{
     user.outcomeCategories[indexOfCategory] = {
       name: transaction.category,
       value: newValue,
-      color: '#E9C6FF',
-      image: '/static/images/expenses/transport.png',
+      color: user.outcomeCategories[indexOfCategory].color,
+      image: user.outcomeCategories[indexOfCategory].image,
     }
     user.transactions.unshift(transaction)
   }

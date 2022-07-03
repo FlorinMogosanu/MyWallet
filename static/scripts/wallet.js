@@ -1,6 +1,11 @@
 const token = localStorage.getItem('token');
 const sumTxt = document.querySelector('.sum-txt'); 
 const curTxt = document.querySelector('.sum-cur'); 
+const incomeBtn = document.querySelector('.incomes-button');
+const expenseBtn = document.querySelector('.expenses-button');
+
+let walletCategoryChart
+let currency
 
 
 let dataExpense = [];
@@ -16,7 +21,12 @@ let labelIncome = []
 let colorIncome = []
 let imageIncome = []
 
+let imageForChart = []
 
+getUser()
+
+expenseBtn.addEventListener('click', expenseBtnHandler)
+incomeBtn.addEventListener('click', incomeBtnHandler)
 
 
 
@@ -29,13 +39,17 @@ async function getUser(){
     })
     .then((res)=> res.json())
     .catch((err)=> console.log(err.message))
+
+    currency = user.currency
   
-    changeBalance(user.balance, user.currency)
+    changeBalance(user.balance)
     createDataForChart(user.incomeCategories, user.outcomeCategories)
-    generateChart(user.currency)
+    generateChart()
+
+    
 }
 
-  function changeBalance(balance, currency){
+  function changeBalance(balance){
     sumTxt.innerHTML = balance
     curTxt.innerHTML = currency
   }
@@ -79,14 +93,13 @@ async function getUser(){
         dataExpense[i] = categoriesOutcome[i].value;
         labelExpense[i] = categoriesOutcome[i].name;
         colorExpense[i] = categoriesOutcome[i].color;
-        imageExpense[i] = categoriesOutcome[i].imageUrl;
+        imageExpense[i] = categoriesOutcome[i].image;
     }
 
-    console.log(dataExpense, labelExpense, colorExpense)
-
+    imageForChart = imageIncome
   }
 
-  function generateChart(currency){
+  function generateChart(){
     const data = {
       labels: labelIncome,
       datasets: [{
@@ -107,7 +120,7 @@ async function getUser(){
           ctx.font = options.fontSize + 'px ' + options.fontFamily;
           ctx.textAlign = 'center';
           ctx.fillStyle = options.fontColor;
-          ctx.fillText('$' + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
+          ctx.fillText(currency + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
           ctx.restore();
   
           ctx.font = options.fontSize + 'px ' + options.fontFamily;
@@ -139,10 +152,90 @@ async function getUser(){
       plugins: [counterWallet],
     };
 
-    const walletCategoryChart = new Chart(
+    walletCategoryChart = new Chart(
       document.getElementById('chart'),
       configWallet
     );
+
+    generateLegend()
   }
 
-  getUser()
+  function generateLegend() {
+    const catsCon = document.querySelector('.cats-con')
+    catsCon.innerHTML = ''
+    const catTxt = document.createElement('p')
+    catTxt.innerHTML = 'Categories'
+    catTxt.setAttribute('class', 'cat-txt')
+    catsCon.appendChild(catTxt)
+
+    walletCategoryChart.legend.legendItems.forEach((dataset,index)=>{
+      const catCon = document.createElement('div')
+      catCon.setAttribute('class', 'cat-con')
+
+      const leftCon = document.createElement('div')
+      leftCon.setAttribute('class', 'left-con-side')
+
+      const catClrCon = document.createElement('div')
+      catClrCon.setAttribute('class', `cat-clr-con ${dataset.text}-con`)
+      const img = document.createElement('img')
+      img.src = imageForChart[index]
+      catClrCon.appendChild(img)
+
+      const catName = document.createElement('p')
+      catName.setAttribute('class', 'cat-name')
+      catName.innerHTML= dataset.text
+
+      leftCon.appendChild(catClrCon)
+      leftCon.appendChild(catName)
+
+
+      const rightCon = document.createElement('div')
+      rightCon.setAttribute('class', 'right-con-side')
+
+      const price = document.createElement('p')
+      price.setAttribute('class','price')
+      price.innerHTML= walletCategoryChart.data.datasets[0].data[index]
+
+      const curr = document.createElement('p')
+      curr.setAttribute('class', 'cur')
+      curr.innerHTML = currency
+
+      rightCon.appendChild(price)
+      rightCon.appendChild(curr)
+
+      catCon.appendChild(leftCon)
+      catCon.appendChild(rightCon)
+
+      catsCon.appendChild(catCon)
+
+    })
+  }
+
+function expenseBtnHandler(){
+  expenseBtn.classList.add('selected')
+  incomeBtn.classList.remove('selected')
+
+  walletCategoryChart.data.datasets[0].data = dataExpense
+  walletCategoryChart.data.labels = labelExpense
+  walletCategoryChart.data.datasets[0].backgroundColor = colorExpense
+  walletCategoryChart.data.datasets[0].borderColor = colorExpense
+  imageForChart = imageExpense
+
+  walletCategoryChart.update()
+  generateLegend()
+}
+
+function incomeBtnHandler(){
+  expenseBtn.classList.remove('selected')
+  incomeBtn.classList.add('selected')
+
+  walletCategoryChart.data.datasets[0].data = dataIncome
+  walletCategoryChart.data.labels = labelIncome
+  walletCategoryChart.data.datasets[0].backgroundColor = colorIncome
+  walletCategoryChart.data.datasets[0].borderColor = colorIncome
+  imageForChart = imageIncome
+
+  walletCategoryChart.update()
+  generateLegend()
+}
+
