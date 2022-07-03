@@ -31,8 +31,8 @@ router.post('/:token', async (req, res) =>{
     user.outcomeCategories[indexOfCategory] = {
       name: transaction.category,
       value: newValue,
-      color: '#E9C6FF',
-      image: '/static/images/expenses/transport.png',
+      color: user.outcomeCategories[indexOfCategory].color,
+      image: user.outcomeCategories[indexOfCategory].image,
     }
     user.transactions.unshift(transaction)
   }
@@ -73,7 +73,9 @@ router.post('/:token', async (req, res) =>{
         }
       })
     }
-    user.balance = user.balance + demoValue
+    if(demoValue === 0) user.balance = user.balance + transaction.amount
+    else if (demoValue > 0) user.balance = user.balance + demoValue
+    
     user.transactions.unshift(transaction)
   }
   

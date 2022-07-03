@@ -45,31 +45,31 @@ const userSchema = new mongoose.Schema({
       {
         name: 'Salary',
         value: 0,
-        color: '#95D8AF',
+        color: '#83EA78',
         image: '/static/images/income/salary.png',
       },
       {
         name: 'Dividend',
         value: 0,
-        color: '#95D8AF',
+        color: '#7899EA',
         image: '/static/images/income/dividend.png',
       },
       {
         name: 'Business',
         value: 0,
-        color: '#95D8AF',
+        color: '#DA78EA',
         image: '/static/images/income/business.png',
       },
       {
         name: 'Rental',
         value: 0,
-        color: '#95D8AF',
+        color: '#EABB78',
         image: '/static/images/income/rental.png',
       },
       {
         name: 'Other',
         value: 0,
-        color: '#95D8AF',
+        color: '#EA7878',
         image: '/static/images/income/other.png',
       },
     ],
@@ -104,7 +104,7 @@ const userSchema = new mongoose.Schema({
       {
         name: 'Travel',
         value: 0,
-        color: '#92E5FF',
+        color: '#78E9EA',
         image: '/static/images/expenses/travel.png',
       },
       {

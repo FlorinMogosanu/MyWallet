@@ -177,40 +177,60 @@
     margin-left: .4rem;
   }
 
-  .food-con {
+  .Food-con {
     background-color: var(--clr-food);
   }
 
-  .transport-con {
+  .Transport-con {
     background-color: var(--clr-transport);
   }
 
-  .utility-con {
+  .Utility-con {
     background-color: var(--clr-utility);
   }
 
-  .medication-con{
+  .Medication-con{
     background-color: var(--clr-medication);
   }
 
-  .clothes-con {
+  .Clothes-con {
     background-color: var(--clr-clothes);
   }
 
-  .travel-con {
+  .Travel-con {
     background-color: var(--clr-travel);
   }
 
-  .insurance-con {
+  .Insurance-con {
     background-color: var(--clr-insurance);
   }
 
-  .education-con {
+  .Education-con {
     background-color: var(--clr-education);
   }
 
-  .other-con {
+  .Other-con {
     background-color: var(--clr-other);
+  }
+
+  .Salary-con{
+    background-color: var(--clr-salary);
+  }
+
+  .Dividend-con{
+    background-color: var(--clr-dividend);
+  }
+
+  .Business-con {
+    background-color: var(--clr-business);
+  }
+
+  .Rental-con{
+    background-color: var(--clr-rental);
+  }
+
+  .selected {
+    font-weight: 700;
   }
 
   /*Nav*/
