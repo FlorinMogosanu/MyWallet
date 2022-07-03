@@ -61,7 +61,6 @@
     height: 12%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   .profile-il {
@@ -82,9 +81,10 @@
   .profile-name-con {
     background-color: bisque;
     display: flex;
+    margin-left: 2rem;
   }
 
-  .profile-name-con {
+  .profile-name-con p {
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -126,7 +126,6 @@
     height: 12%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   .dark-il {
     background-color: var(--clr-white);
@@ -142,6 +141,7 @@
     height: 2.4rem;
   }
   .dark-txt {
+    margin-left: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -156,7 +156,6 @@
     height: 12%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   .currency-il {
     background-color: var(--clr-white);
@@ -172,6 +171,7 @@
     height: 2.4rem;
   }
   .currency-txt {
+    margin-left: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -184,7 +184,6 @@
     height: 12%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   .logout-il {
     background-color: var(--clr-white);
@@ -200,6 +199,7 @@
     height: 2.4rem;
   }
   .logout-txt {
+    margin-left: 2rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
