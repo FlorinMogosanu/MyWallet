@@ -14,7 +14,6 @@ async function loadHistory(){
   container.innerHTML = ''
 
   user.transactions.forEach((transaction) => {
-    console.log(transaction)
     const catContainer = document.createElement('div');
     catContainer.setAttribute('class', 'cat-con');
   
