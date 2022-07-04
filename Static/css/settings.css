@@ -29,7 +29,6 @@
   /*main*/
 
   .main-con {
-    background-color: brown;
     width: 90%;
     height: 75%;
     display: flex;
@@ -38,10 +37,14 @@
     justify-content: space-around;
   }
 
+  .left-con {
+    display: flex;
+    align-items: center;
+  }
+
   /*account title*/
 
   .account-con {
-    background-color: aquamarine;
     width: 100%;
     height: 7.5%;
     display: flex;
@@ -56,11 +59,11 @@
   /*account settings*/
 
   .account-settings-con {
-    background-color: aqua;
     width: 100%;
     height: 12%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   .profile-il {
@@ -79,9 +82,8 @@
   }
 
   .profile-name-con {
-    background-color: bisque;
     display: flex;
-    margin-left: 2rem;
+    margin-left: 1.4rem;
   }
 
   .profile-name-con p {
@@ -106,7 +108,6 @@
   /*preferences title*/
 
   .preferences-con {
-    background-color: aquamarine;
     width: 100%;
     height: 7.5%;
     display: flex;
@@ -121,11 +122,11 @@
   /*dark mode*/
 
   .dark-con {
-    background-color: aqua;
     width: 100%;
     height: 12%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .dark-il {
     background-color: var(--clr-white);
@@ -141,21 +142,70 @@
     height: 2.4rem;
   }
   .dark-txt {
-    margin-left: 2rem;
+    margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   /*switch*/
 
+  .toggle-switch {
+    height: 100%;
+    width: 4rem;
+  }
+
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 100%;
+    height: 50%;
+    background-color: var(--clr-white);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40%;
+    height: 70%;
+    background-color: var(--f-clr-primary);
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  
+  input:checked + label {
+    background-color: var(--f-clr-primary);
+  }
+  
+  input:checked + label:after {
+    background-color: var(--clr-white);
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 40%;
+    height: 70%;
+  }
+
   /*currency*/
 
   .currency-con {
-    background-color: aquamarine;
     width: 100%;
     height: 12%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .currency-il {
     background-color: var(--clr-white);
@@ -171,19 +221,27 @@
     height: 2.4rem;
   }
   .currency-txt {
-    margin-left: 2rem;
+    margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
+  }
+
+  .currency-con select{
+    border: none;
+    padding: .2rem;
+    border-radius: 100px;
+    height: 2.2rem;
+    width: 4rem;
   }
 
   /*currency*/
 
   .logout-con {
-    background-color: aqua;
     width: 100%;
     height: 12%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .logout-il {
     background-color: var(--clr-white);
@@ -199,7 +257,7 @@
     height: 2.4rem;
   }
   .logout-txt {
-    margin-left: 2rem;
+    margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
