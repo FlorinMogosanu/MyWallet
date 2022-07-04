@@ -10,10 +10,18 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
     <link rel="icon" href="/static/images/logowhite.png" />
     <title>MyWallet</title>
     <link rel="stylesheet" href="/static/css/savings.css" />
     <link rel="stylesheet" href="/static/css/var.css" />
+    <script defer src="/static/scripts/savings.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="page">
@@ -34,7 +42,21 @@
             <button class="edit-button">Edit</button>
           </div>
         </div>
-        <div class="cats-con">
+
+        <div class="swiper cats-con">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            
+            
+          </div>
+        
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+      
+        </div>
+        <!-- <div class="cats-con">
           <button class="left-arrow">
             <img src="/static/images/arrow-left.png" alt="" />
           </button>
@@ -56,7 +78,7 @@
           <button class="right-arrow">
             <img src="/static/images/arrow-right.png" alt="" />
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="nav-con">

@@ -33,4 +33,22 @@ router.post('/:token', async(req,res) => {
   }
 })
 
+router.delete('/:token/:index', async(req,res) =>{
+  try{
+  const token = req.params.token
+  const decoded = jwt_decode(token)
+  const user = await User.findById(decoded.id)
+  const index = req.params.index
+  if(!user) return res.json({status: 'error', error: 'User not found'})
+  user.savingItems.splice(index, 1)
+
+  await user.save()
+  res.json({status: 'ok'})
+  }
+  catch{
+    return res.json({status: 'error', error: err.message});
+  }
+})
+
+
 module.exports = router

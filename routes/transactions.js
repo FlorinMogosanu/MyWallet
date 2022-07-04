@@ -57,7 +57,7 @@ router.post('/:token', async (req, res) =>{
         demoValue = transaction.amount - savedAmount
         const saved = user.savingItems[indexOfItem].savedValue + savedAmount
 
-        user.savedValue = savedAmount
+        user.savedValue = savedAmount + user.savedValue
 
         user.savingItems[indexOfItem] = {
           name: item.name,
@@ -68,7 +68,7 @@ router.post('/:token', async (req, res) =>{
           image: item.image
         }
         
-        if(item.value >= user.savingItems[indexOfItem].savedValue){
+        if(user.savingItems[indexOfItem].savedValue >= user.savingItems[indexOfItem].value){
           user.savingItems.splice(indexOfItem, 1)
         }
       })
