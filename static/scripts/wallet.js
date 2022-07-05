@@ -117,7 +117,7 @@ async function getUser(){
       afterDatasetsDraw(chart, args, options) {
           const { ctx, data, chartArea: {top, bottom, right, left, width, height} } = chart;  
           ctx.save();
-          ctx.font = options.fontSize + 'px ' + options.fontFamily;
+          ctx.font =40 + 'px ' + options.fontFamily;
           ctx.textAlign = 'center';
           ctx.fillStyle = options.fontColor;
           ctx.fillText(currency + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
