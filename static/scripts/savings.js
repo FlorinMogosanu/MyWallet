@@ -1,46 +1,8 @@
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  slidesPerView: 3,
-  spaceBetween: 30,
-  slidesPerGroup: 3,
-  loop: true,
-  loopFillGroupWithBlank: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 30,
-    },
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 40,
-    },
-    1024: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  },
-});
-
 const token = localStorage.getItem('token');
-const swiperWrapper = document.querySelector('.swiper-wrapper');
+const swiperWrapper = document.querySelector('[data-slides]');
 const sumTxt = document.querySelector('.sum-txt'); 
 const curTxt = document.querySelector('.sum-cur');
+const carouselButtons = document.querySelectorAll('[data-carousel-button]');
 let currency
 getUser()
 
@@ -70,10 +32,14 @@ function changeBalance(balance){
 
 function generateSliderObjects(savingItems){
   savingItems.forEach((item)=>{
-    const percentage = item.savedValue / item.value * 100
+    const percentage = Math.floor(item.savedValue / item.value * 100)
     const index = savingItems.indexOf(item)
-    const catCon = document.createElement('div')
-    catCon.setAttribute('class','cat-con swiper-slide')
+    const catCon = document.createElement('li')
+    catCon.setAttribute('class','cat-con')
+
+    if(index === 0){
+      catCon.dataset.active = true
+    }
 
     const trashCon = document.createElement('div')
     trashCon.setAttribute('class', 'cat-trash-con')
@@ -166,6 +132,21 @@ function generateSliderObjects(savingItems){
   })
 
 }
+
+carouselButtons.forEach(button =>{
+  button.addEventListener('click', ()=>{
+    const offset = button.dataset.carouselButton === 'next' ? 1 : -1
+    const slides = document.querySelector('[data-slides]')
+    const activeSlide = slides.querySelector('[data-active]')
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset
+    console.log(newIndex)
+    if(newIndex < 0 ) newIndex = slides.children.length  - 1
+    if(newIndex >= slides.children.length) newIndex = 0
+
+    slides.children[newIndex].dataset.active = true
+    delete activeSlide.dataset.active
+  })
+})
 
 async function editBtnHandler(){
   const trashBtns = document.querySelectorAll('.trash-img')

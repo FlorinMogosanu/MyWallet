@@ -24,6 +24,8 @@ router.post('/:token', async (req, res) => {
     if(lastName){
       user.lastName = lastName
     }
+
+    if(password && password.length <5) return res.json({status: 'error', error: 'Password must be at least 5 characters long'})
     if(password){
       user.password = await bcrypt.hash(password,10)
     }
