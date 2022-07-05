@@ -3,7 +3,8 @@ const selectCurr = document.getElementById('currency')
 const token = localStorage.getItem('token')
 const dmToggle = document.querySelector('#switch')
 let darkMode = localStorage.getItem('darkMode')
-
+loadCurr()
+loadName()
 
 function enableDarkMode(){
   document.body.classList.add('darkMode')
@@ -18,7 +19,8 @@ function disableDarkMode(){
 }
 
 if(darkMode === 'enabled'){
-  enableDarkMode()
+  document.body.classList.add('darkMode')
+  dmToggle.checked = true
 }
 
 dmToggle.addEventListener('change', function(){
@@ -29,7 +31,7 @@ dmToggle.addEventListener('change', function(){
   }
 })
 
-loadCurr()
+
 logOutBtn.addEventListener('click', logOutBtnHandler);
 selectCurr.addEventListener('change', selectCurrHandler);
 
@@ -49,6 +51,23 @@ async function loadCurr(){
   .catch((err)=> console.log(err.message))
 
   selectCurr.value = result.currency
+}
+
+async function loadName(){
+  const {user} = await fetch(`/api/user/${token}`,{
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then((res)=> res.json())
+  .catch((err)=> console.log(err.message))
+
+  const firstName = document.querySelector('.profile-first-name-txt')
+  const lastName = document.querySelector('.profile-last-name-txt')
+
+  firstName.innerHTML = `${user.firstName}&nbsp`
+  lastName.innerHTML = user.lastName
 }
 
 async function selectCurrHandler(){

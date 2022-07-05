@@ -153,6 +153,7 @@
     height: clamp(12.5rem, 10rem + 3vw, 18rem);
     width: clamp(12.5rem, 10rem + 3vw, 18rem);
     width: 80%;
+    max-width: 700px;
     border-radius: 30px;
   }
 
