@@ -111,3 +111,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
   --f-family: 'Poppins', sans-serif;
 }
+
+.darkMode{
+  --clr-white: #000;
+  --f-clr-primary: #fff;
+}

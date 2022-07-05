@@ -1,6 +1,33 @@
 const logOutBtn = document.querySelector('.logout-button')
 const selectCurr = document.getElementById('currency')
 const token = localStorage.getItem('token')
+const dmToggle = document.querySelector('#switch')
+let darkMode = localStorage.getItem('darkMode')
+
+
+function enableDarkMode(){
+  document.body.classList.add('darkMode')
+
+  localStorage.setItem('darkMode', 'enabled')
+}
+
+function disableDarkMode(){
+  document.body.classList.remove('darkMode')
+
+  localStorage.setItem('darkMode', null)
+}
+
+if(darkMode === 'enabled'){
+  enableDarkMode()
+}
+
+dmToggle.addEventListener('change', function(){
+  if(this.checked){
+    enableDarkMode()
+  }else{
+    disableDarkMode()
+  }
+})
 
 loadCurr()
 logOutBtn.addEventListener('click', logOutBtnHandler);
