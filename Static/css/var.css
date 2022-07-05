@@ -69,7 +69,9 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root{
   --clr-white: #ffffff;
+  --clr-black: #000000;
   --clr-txt-white: #ffffff;
+  --clr-txt-black: #000000;
   --clr-light-gray: #EDEFF3;
 
   --clr-salary: #83EA78;
@@ -97,7 +99,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
   --clr-grd-purple: linear-gradient(135deg, rgba(129,97,255,1) 0%, rgba(213,93,255,1) 100%);
 
-  --f-clr-primary: #000000;
 
   --f-weight-200: 200;
   --f-weight-300: 300;
@@ -113,6 +114,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .darkMode{
-  --clr-white: #000;
-  --f-clr-primary: #fff;
+  --clr-white: #464646;
+  --clr-txt-white: #000000;
+  --clr-txt-black: #ffffff;
+  --clr-light-gray: #1A1A1A;
 }

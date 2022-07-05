@@ -110,6 +110,11 @@
     font-weight: 600;
   }
 
+  .selected {
+    background: var(--clr-grd-purple);
+    color: var(--clr-txt-white);
+  }
+
   /*chart*/
 
   .chart-con {
@@ -227,10 +232,6 @@
 
   .Rental-con{
     background-color: var(--clr-rental);
-  }
-
-  .selected {
-    font-weight: 700;
   }
 
   /*Nav*/
