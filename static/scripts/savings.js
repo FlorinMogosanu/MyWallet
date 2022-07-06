@@ -4,6 +4,21 @@ const sumTxt = document.querySelector('.sum-txt');
 const curTxt = document.querySelector('.sum-cur');
 const carouselButtons = document.querySelectorAll('[data-carousel-button]');
 let currency
+const darkMode = localStorage.getItem('darkMode')
+
+if(darkMode === 'enabled') {
+  const homeImg = document.querySelector('.home-img')
+  const walletImg = document.querySelector('.wallet-img')
+  const historyImg = document.querySelector('.history-img')
+  const rightArrow = document.querySelector('.right-arrow img')
+  const leftArrow = document.querySelector('.left-arrow img')
+  document.body.classList.add('darkMode')
+  homeImg.src = '/static/images/homewhite.png'
+  walletImg.src = '/static/images/walletwhite.png'
+  historyImg.src = '/static/images/historywhite.png'
+  rightArrow.src = '/static/images/arrow-rightwhite.png'
+  leftArrow.src = '/static/images/arrow-leftwhite.png'
+}
 getUser()
 
 const editBtn = document.querySelector('.edit-button')
@@ -49,7 +64,8 @@ function generateSliderObjects(savingItems){
 
     const thrashImg = document.createElement('img')
     thrashImg.setAttribute('class', 'trash-img dnone')
-    thrashImg.src = '/static/images/trash.png'
+    if(darkMode === 'enabled') thrashImg.src = '/static/images/trashwhite.png'
+    else thrashImg.src = '/static/images/trash.png'
 
     thrashImg.addEventListener('click', async () =>{
       const result = await fetch(`/api/saving/${token}/${index}`,{

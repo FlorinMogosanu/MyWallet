@@ -14,6 +14,27 @@ const imgIncome = document.querySelector('#income-label img')
 const imgExpense = document.querySelector('#expense-label img')
 const imgSaving = document.querySelector('#saving-label img')
 
+const darkMode = localStorage.getItem('darkMode')
+
+if(darkMode === 'enabled') {
+  const homeImg = document.querySelector('.home-img')
+  const walletImg = document.querySelector('.wallet-img')
+  const savingImg = document.querySelector('.savings-img')
+  const historyImg = document.querySelector('.history-img')
+  const nextImgs = document.querySelectorAll('.next')
+  const backImgs = document.querySelectorAll('.back')
+  document.body.classList.add('darkMode')
+  homeImg.src = '/static/images/homewhite.png'
+  walletImg.src = '/static/images/walletwhite.png'
+  savingImg.src = '/static/images/savingswhite.png'
+  historyImg.src = '/static/images/historywhite.png'
+  imgIncome.src = '/static/images/pluswhite.png'
+  imgExpense.src ='/static/images/pluswhite.png'
+  imgSaving.src = '/static/images/pluswhite.png'
+  nextImgs.forEach(img => img.src = '/static/images/arrow-rightwhite.png')
+  backImgs.forEach(img => img.src = '/static/images/arrow-leftwhite.png')
+}
+
 const expenseCategory = [
     {
       name: 'Food',
@@ -497,21 +518,21 @@ async function doneClickHandler(e){
 
 function incomeRadioClickHandler(e){
   
-  imgIncome.src = '/static/images/pluswhite.png'
-  imgExpense.src = '/static/images/plus.png'
-  imgSaving.src = '/static/images/plus.png'
+  imgIncome.src = '/static/images/plus.png'
+  imgExpense.src = '/static/images/pluswhite.png'
+  imgSaving.src = '/static/images/pluswhite.png'
 }
 
 function expenseRadioClickHandler(e){
   
-  imgIncome.src = '/static/images/plus.png'
-  imgExpense.src = '/static/images/pluswhite.png'
-  imgSaving.src = '/static/images/plus.png'
+  imgIncome.src = '/static/images/pluswhite.png'
+  imgExpense.src = '/static/images/plus.png'
+  imgSaving.src = '/static/images/pluswhite.png'
 }
 
 function savingRadioClickHandler(e){
   
-  imgIncome.src = '/static/images/plus.png'
-  imgExpense.src = '/static/images/plus.png'
-  imgSaving.src = '/static/images/pluswhite.png'
+  imgIncome.src = '/static/images/pluswhite.png'
+  imgExpense.src = '/static/images/pluswhite.png'
+  imgSaving.src = '/static/images/plus.png'
 }

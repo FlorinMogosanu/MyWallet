@@ -1,5 +1,16 @@
 const container = document.getElementById('container');
 const token = localStorage.getItem('token');
+const darkMode = localStorage.getItem('darkMode')
+
+if(darkMode === 'enabled') {
+  const homeImg = document.querySelector('.home-img')
+  const walletImg = document.querySelector('.wallet-img')
+  const savingsImg = document.querySelector('.savings-img')
+  document.body.classList.add('darkMode')
+  homeImg.src = '/static/images/homewhite.png'
+  walletImg.src = '/static/images/walletwhite.png'
+  savingsImg.src = '/static/images/savingswhite.png'
+}
 
 async function loadHistory(){
   const {user} = await fetch(`/api/user/${token}`,{

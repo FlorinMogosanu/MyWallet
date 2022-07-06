@@ -1,4 +1,9 @@
 const form = document.getElementById('login-form')
+const darkMode = localStorage.getItem('darkMode')
+
+if(darkMode === 'enabled') {
+  document.body.classList.add('darkMode')
+}
 
 form.addEventListener('submit', loginUser)
 

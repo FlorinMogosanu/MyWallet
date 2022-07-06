@@ -4,6 +4,18 @@ const curTxt = document.querySelector('.sum-cur');
 const incomeBtn = document.querySelector('.incomes-button');
 const expenseBtn = document.querySelector('.expenses-button');
 
+const darkMode = localStorage.getItem('darkMode')
+
+if(darkMode === 'enabled') {
+  const homeImg = document.querySelector('.home-img')
+  const savingImg = document.querySelector('.savings-img')
+  const historyImg = document.querySelector('.history-img')
+  document.body.classList.add('darkMode')
+  homeImg.src = '/static/images/homewhite.png'
+  savingImg.src = '/static/images/savingswhite.png'
+  historyImg.src = '/static/images/historywhite.png'
+}
+
 let walletCategoryChart
 let currency
 
@@ -22,6 +34,8 @@ let colorIncome = []
 let imageIncome = []
 
 let imageForChart = []
+
+
 
 getUser()
 
@@ -119,7 +133,9 @@ async function getUser(){
           ctx.save();
           ctx.font =40 + 'px ' + options.fontFamily;
           ctx.textAlign = 'center';
-          ctx.fillStyle = options.fontColor;
+          if(darkMode === 'enabled') ctx.fillStyle = 'white';
+          else ctx.fillStyle = 'black';
+          
           ctx.fillText(currency + data.datasets[0].data[0], width / 2, top + (height / 2)+ (options.fontSize * 0.34)-25);
           ctx.restore();
   
