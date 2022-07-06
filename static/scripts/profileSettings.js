@@ -3,7 +3,17 @@ const darkMode = localStorage.getItem('darkMode')
 const submit = document.querySelector('.save-button')
 
 if(darkMode === 'enabled') {
+  const profileImg = document.querySelector('.profile-img')
+  const homeImg = document.querySelector('.home-img')
+  const walletImg = document.querySelector('.wallet-img')
+  const savingImg = document.querySelector('.savings-img')
+  const historyImg = document.querySelector('.history-img')
   document.body.classList.add('darkMode')
+  profileImg.src = '/static/images/accountwhite.png'
+  homeImg.src = '/static/images/homewhite.png'
+  walletImg.src = '/static/images/walletwhite.png'
+  savingImg.src = '/static/images/savingswhite.png'
+  historyImg.src = '/static/images/historywhite.png'
 }
 
 submit.addEventListener('click', sumbitClickHandler)
