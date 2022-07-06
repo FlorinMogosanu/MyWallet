@@ -22,6 +22,7 @@
   }
 
   .top-con p {
+    color: var(--clr-txt-black);
     font-size: clamp(1.8rem, 1.6rem + .8vw, 2.2rem);
     font-weight: 600;
   }
@@ -36,6 +37,7 @@
   }
 
   .transnav-con-ts1 button{
+    color: var(--clr-txt-black);
     background-color:var(--clr-white);
     border: none;
     text-decoration: none;
@@ -48,6 +50,7 @@
   }
 
   .transnav-con-ts2 button{
+    color: var(--clr-txt-black);
     background-color:var(--clr-white);
     border: none;
     text-decoration: none;
@@ -60,6 +63,7 @@
   }
 
   .transnav-con-ts3 button{
+    color: var(--clr-txt-black);
     background-color:var(--clr-white);
     border: none;
     text-decoration: none;
@@ -114,21 +118,27 @@
     display: none;
   }
 
+  
   .selection-ts1:checked + .show-ts1{
     background: var(--clr-grd-purple);
+  }
+  
+  .selection-ts1:checked + .show-ts1 p{
     color: var(--clr-txt-white);
   }
-
+  
   .options-ts1 img{
     height: 2rem;
     margin-left: 1.2rem;
   }
 
   .options-ts1 p {
+    color: var(--clr-txt-black);
     font-size: 1.8rem;
     font-weight: 500;
     margin-left: 1.2rem;
   }
+
 
   /*transNav*/
 
@@ -372,11 +382,13 @@
   }
 
   .options-ts3 label{
+    color: var(--clr-txt-black);
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   .options-ts3 input {
+    color: var(--clr-txt-black);
     height: 60%;
     border: none;
     border-radius: 30px;
@@ -630,6 +642,10 @@
       align-items: center;
       justify-content: flex-start;
     }
+
+    .home-txt {
+      color:var(--clr-txt-black);
+    }
   
     .wallet-link {
       height: 9%;
@@ -638,6 +654,10 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+    }
+
+    .wallet-txt {
+      color: var(--clr-txt-black);
     }
   
     .add-link {
@@ -653,6 +673,10 @@
       align-items: center;
       justify-content: flex-start;
     }
+
+    .savings-txt {
+      color: var(--clr-txt-black);
+    }
   
     .history-link {
       background-color: var(--clr-light-gray);
@@ -662,6 +686,10 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+    }
+
+    .history-txt {
+      color: var(--clr-txt-black);
     }
   
     /*add*/

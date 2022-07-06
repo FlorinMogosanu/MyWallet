@@ -28,6 +28,7 @@
 }
 
 .hello-con p{
+  color: var(--clr-txt-black);
   font-size: clamp(1.6rem, 1.4rem + .8vw, 2rem);
   font-weight: 600;
 }
@@ -221,6 +222,7 @@
     font-size: clamp(1.2rem, 1rem + .5vw, 1.8rem);
     margin: .5rem;
     font-weight: 600;
+    color: var(--clr-txt-black);
   }
 
   /*tabs*/
@@ -271,6 +273,10 @@
     justify-content: flex-start;
   }
 
+  .wallet-txt {
+    color: var(--clr-txt-black);
+  }
+
   .add-link {
     display: none;
   }
@@ -285,6 +291,10 @@
     justify-content: flex-start;
   }
 
+  .savings-txt {
+    color: var(--clr-txt-black);
+  }
+
   .history-link {
     background-color: var(--clr-light-gray);
     height: 9%;
@@ -293,6 +303,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .history-txt {
+    color: var(--clr-txt-black);
   }
 
   /*add*/

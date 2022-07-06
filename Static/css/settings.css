@@ -22,6 +22,7 @@
   }
 
   .top-con p {
+    color:var(--clr-txt-black);
     font-size: clamp(1.8rem, 1.6rem + .8vw, 2.2rem);
     font-weight: 600;
   }
@@ -52,6 +53,7 @@
   }
 
   .account-txt {
+    color: var(--clr-txt-black);
     font-size: 2rem;
     font-weight: 500;
   }
@@ -87,6 +89,7 @@
   }
 
   .profile-name-con p {
+    color: var(--clr-txt-black);
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -115,6 +118,7 @@
   }
 
   .preferences-txt {
+    color: var(--clr-txt-black);
     font-size: 2rem;
     font-weight: 500;
   }
@@ -142,6 +146,7 @@
     height: 2.4rem;
   }
   .dark-txt {
+    color: var(--clr-txt-black);
     margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
@@ -221,17 +226,23 @@
     height: 2.4rem;
   }
   .currency-txt {
+    color: var(--clr-txt-black);
     margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
 
   .currency-con select{
+    color: var(--clr-txt-black);
     border: none;
     padding: .2rem;
     border-radius: 100px;
     height: 2.2rem;
     width: 4rem;
+  }
+
+  .currency-con option {
+    color: var(--clr-txt-black);
   }
 
   /*currency*/
@@ -257,6 +268,7 @@
     height: 2.4rem;
   }
   .logout-txt {
+    color: var(--clr-txt-black);
     margin-left: 1.4rem;
     font-size: 1.2rem;
     font-weight: 500;
@@ -472,6 +484,10 @@
         align-items: center;
         justify-content: flex-start;
       }
+
+      .home-txt {
+        color:var(--clr-txt-black);
+      }
     
       .wallet-link {
         height: 9%;
@@ -480,6 +496,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+      }
+
+      .wallet-txt {
+        color: var(--clr-txt-black);
       }
     
       .add-link {
@@ -495,6 +515,10 @@
         align-items: center;
         justify-content: flex-start;
       }
+
+      .savings-txt {
+        color: var(--clr-txt-black);
+      }
     
       .history-link {
         background-color: var(--clr-light-gray);
@@ -504,6 +528,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+      }
+
+      .history-txt {
+        color: var(--clr-txt-black);
       }
     
       /*add*/

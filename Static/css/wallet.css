@@ -21,6 +21,7 @@
   }
 
   .top-con p {
+    color: var(--clr-txt-black);
     font-size: clamp(1.8rem, 1.6rem + .8vw, 2.2rem);
     font-weight: 600;
   }
@@ -85,6 +86,7 @@
   }
 
   .incomes-button {
+    color: var(--clr-txt-black);
     background-color:var(--clr-white);
     border: none;
     border-radius: 30px;
@@ -98,6 +100,7 @@
   }
 
   .expenses-button {
+    color: var(--clr-txt-black);
     background-color:var(--clr-white);
     border: none;
     border-radius: 30px;
@@ -130,6 +133,7 @@
   /*categories*/
 
   .cat-txt {
+    color: var(--clr-txt-black);
     margin-top: 1.6rem;
     font-size: clamp(1.2rem, 1.2rem + .8vw, 2rem);
     font-weight: 600;
@@ -164,6 +168,7 @@
   }
 
   .cat-con p {
+    color: var(--clr-txt-black);
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -464,6 +469,7 @@
       font-size: clamp(1.2rem, 1rem + .5vw, 1.8rem);
       margin: .5rem;
       font-weight: 600;
+      color: var(--clr-txt-black);
     }
   
     /*tabs*/
@@ -499,8 +505,8 @@
       justify-content: flex-start;
     }
   
-    .wallet-txt {
-      color:var(--clr-txt-white);
+    .home-txt {
+      color:var(--clr-txt-black);
     }
   
     .wallet-link {
@@ -510,6 +516,10 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+    }
+
+    .wallet-txt {
+      color: var(--clr-txt-white);
     }
   
     .add-link {
@@ -525,6 +535,10 @@
       align-items: center;
       justify-content: flex-start;
     }
+
+    .savings-txt {
+      color: var(--clr-txt-black);
+    }
   
     .history-link {
       background-color: var(--clr-light-gray);
@@ -535,6 +549,11 @@
       align-items: center;
       justify-content: flex-start;
     }
+
+    .history-txt {
+      color: var(--clr-txt-black);
+    }
+  
   
     /*add*/
   
