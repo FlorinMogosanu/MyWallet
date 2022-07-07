@@ -6,10 +6,12 @@ if(darkMode === 'enabled') {
   const homeImg = document.querySelector('.home-img')
   const walletImg = document.querySelector('.wallet-img')
   const savingsImg = document.querySelector('.savings-img')
+  const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
   homeImg.src = '/static/images/homewhite.png'
   walletImg.src = '/static/images/walletwhite.png'
   savingsImg.src = '/static/images/savingswhite.png'
+  logoImg.src = '/static/images/logowhite.png'
 }
 
 async function loadHistory(){

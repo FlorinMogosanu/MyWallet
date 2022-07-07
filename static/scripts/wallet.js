@@ -10,10 +10,12 @@ if(darkMode === 'enabled') {
   const homeImg = document.querySelector('.home-img')
   const savingImg = document.querySelector('.savings-img')
   const historyImg = document.querySelector('.history-img')
+  const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
   homeImg.src = '/static/images/homewhite.png'
   savingImg.src = '/static/images/savingswhite.png'
   historyImg.src = '/static/images/historywhite.png'
+  logoImg.src = '/static/images/logowhite.png'
 }
 
 let walletCategoryChart

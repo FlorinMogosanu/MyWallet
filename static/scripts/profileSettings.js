@@ -8,12 +8,14 @@ if(darkMode === 'enabled') {
   const walletImg = document.querySelector('.wallet-img')
   const savingImg = document.querySelector('.savings-img')
   const historyImg = document.querySelector('.history-img')
+  const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
   profileImg.src = '/static/images/accountwhite.png'
   homeImg.src = '/static/images/homewhite.png'
   walletImg.src = '/static/images/walletwhite.png'
   savingImg.src = '/static/images/savingswhite.png'
   historyImg.src = '/static/images/historywhite.png'
+  logoImg.src = '/static/images/logowhite.png'
 }
 
 submit.addEventListener('click', sumbitClickHandler)

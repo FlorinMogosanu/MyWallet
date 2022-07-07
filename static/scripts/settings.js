@@ -12,6 +12,7 @@ const homeImg = document.querySelector('.home-img')
 const walletImg = document.querySelector('.wallet-img')
 const savingImg = document.querySelector('.savings-img')
 const historyImg = document.querySelector('.history-img')
+const logoImg = document.querySelector('.logo-img')
 let darkMode = localStorage.getItem('darkMode')
 loadCurr()
 loadName()
@@ -28,6 +29,7 @@ function enableDarkMode(){
   walletImg.src = '/static/images/walletwhite.png'
   savingImg.src = '/static/images/savingswhite.png'
   historyImg.src = '/static/images/historywhite.png'
+  logoImg.src = '/static/images/logowhite.png'
   localStorage.setItem('darkMode', 'enabled')
 }
 
@@ -43,6 +45,7 @@ function disableDarkMode(){
   walletImg.src = '/static/images/wallet.png'
   savingImg.src = '/static/images/savings.png'
   historyImg.src = '/static/images/history.png'
+  logoImg.src = '/static/images/logo.png'
   localStorage.setItem('darkMode', null)
 }
 
@@ -59,6 +62,7 @@ if(darkMode === 'enabled'){
   walletImg.src = '/static/images/walletwhite.png'
   savingImg.src = '/static/images/savingswhite.png'
   historyImg.src = '/static/images/historywhite.png'
+  logoImg.src = '/static/images/logowhite.png'
 }
 
 dmToggle.addEventListener('change', function(){

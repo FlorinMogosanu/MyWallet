@@ -23,6 +23,7 @@ if(darkMode === 'enabled') {
   const historyImg = document.querySelector('.history-img')
   const nextImgs = document.querySelectorAll('.next')
   const backImgs = document.querySelectorAll('.back')
+  const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
   homeImg.src = '/static/images/homewhite.png'
   walletImg.src = '/static/images/walletwhite.png'
@@ -33,6 +34,7 @@ if(darkMode === 'enabled') {
   imgSaving.src = '/static/images/pluswhite.png'
   nextImgs.forEach(img => img.src = '/static/images/arrow-rightwhite.png')
   backImgs.forEach(img => img.src = '/static/images/arrow-leftwhite.png')
+  logoImg.src = '/static/images/logowhite.png'
 }
 
 const expenseCategory = [

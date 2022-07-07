@@ -10,12 +10,14 @@ if(darkMode === 'enabled') {
   const homeImg = document.querySelector('.home-img')
   const walletImg = document.querySelector('.wallet-img')
   const historyImg = document.querySelector('.history-img')
+  const logoImg = document.querySelector('.logo-img')
   const rightArrow = document.querySelector('.right-arrow img')
   const leftArrow = document.querySelector('.left-arrow img')
   document.body.classList.add('darkMode')
   homeImg.src = '/static/images/homewhite.png'
   walletImg.src = '/static/images/walletwhite.png'
   historyImg.src = '/static/images/historywhite.png'
+  logoImg.src = '/static/images/logowhite.png'
   rightArrow.src = '/static/images/arrow-rightwhite.png'
   leftArrow.src = '/static/images/arrow-leftwhite.png'
 }
