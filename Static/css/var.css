@@ -114,8 +114,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .darkMode{
-  --clr-white: #464646;
-  --clr-txt-white: #000000;
+  --clr-white: #434343;
   --clr-txt-black: #ffffff;
-  --clr-light-gray: #1A1A1A;
+  --clr-light-gray: #222222;
 }
