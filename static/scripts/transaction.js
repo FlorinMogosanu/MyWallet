@@ -517,22 +517,40 @@ async function doneClickHandler(e){
 }
 
 function incomeRadioClickHandler(e){
-  
-  imgIncome.src = '/static/images/plus.png'
-  imgExpense.src = '/static/images/pluswhite.png'
-  imgSaving.src = '/static/images/pluswhite.png'
+  if(darkMode === 'enabled'){
+    imgIncome.src = '/static/images/plus.png'
+    imgExpense.src = '/static/images/pluswhite.png'
+    imgSaving.src = '/static/images/pluswhite.png'
+  }
+  else{
+    imgIncome.src = '/static/images/pluswhite.png'
+    imgExpense.src = '/static/images/plus.png'
+    imgSaving.src = '/static/images/plus.png'
+  }
 }
 
 function expenseRadioClickHandler(e){
-  
-  imgIncome.src = '/static/images/pluswhite.png'
-  imgExpense.src = '/static/images/plus.png'
-  imgSaving.src = '/static/images/pluswhite.png'
+  if(darkMode === 'enabled'){
+    imgIncome.src = '/static/images/pluswhite.png'
+    imgExpense.src = '/static/images/plus.png'
+    imgSaving.src = '/static/images/pluswhite.png'
+  }
+  else{
+    imgIncome.src = '/static/images/plus.png'
+    imgExpense.src = '/static/images/pluswhite.png'
+    imgSaving.src = '/static/images/plus.png'
+  }
 }
 
 function savingRadioClickHandler(e){
-  
-  imgIncome.src = '/static/images/pluswhite.png'
-  imgExpense.src = '/static/images/pluswhite.png'
-  imgSaving.src = '/static/images/plus.png'
+  if(darkMode === 'enabled'){
+    imgIncome.src = '/static/images/pluswhite.png'
+    imgExpense.src = '/static/images/pluswhite.png'
+    imgSaving.src = '/static/images/plus.png'
+  }
+  else{
+    imgIncome.src = '/static/images/plus.png'
+    imgExpense.src = '/static/images/plus.png'
+    imgSaving.src = '/static/images/pluswhite.png'
+  }
 }
