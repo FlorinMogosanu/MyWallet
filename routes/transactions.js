@@ -24,6 +24,7 @@ router.post('/:token', async (req, res) =>{
 
   if(transaction.type === 'expense'){
     user.balance = user.balance - transaction.amount
+    user.balancePerMonth[6] = user.balance
     user.expenseValue = user.expenseValue + transaction.amount
     const category = user.outcomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.outcomeCategories.indexOf(category)
@@ -75,6 +76,7 @@ router.post('/:token', async (req, res) =>{
     }
     if(demoValue === 0) user.balance = user.balance + transaction.amount
     else if (demoValue > 0) user.balance = user.balance + demoValue
+    user.balancePerMonth[6] = user.balance
     
     user.transactions.unshift(transaction)
   }

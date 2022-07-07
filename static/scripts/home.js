@@ -8,6 +8,9 @@ let dataOutcome = [];
 let labelOutcome = [];
 let colorOutcome = [];
 
+let dataLine = []
+let labelLine = []
+
 if(darkMode === 'enabled') {
   const accountImg = document.querySelector('.profile-img')
   const walletImg = document.querySelector('.wallet-img')
@@ -43,6 +46,8 @@ async function getUser(){
   generateSavingsTwo(user.savingItems[1])
   createDataForChart(user.outcomeCategories)
   generateChart()
+  createDataForLineChart(user.balancePerMonth)
+  generateLineChart()
 }
 
 function updateBalance(balance){
@@ -67,6 +72,7 @@ function updateExpense(balance){
 }
 
 function generateSavingsOne(item){
+  if(!item) return
   const savingCon = document.querySelector('.saving1-con')
   const percentage = Math.floor(item.savedValue / item.value * 100)
 
@@ -134,6 +140,7 @@ function generateSavingsOne(item){
 }
 
 function generateSavingsTwo(item){
+  if(!item) return
   const savingCon = document.querySelector('.saving2-con')
   const percentage = Math.floor(item.savedValue / item.value * 100)
 
@@ -331,5 +338,62 @@ function generateLegend() {
   })
 }
 
+function createDataForLineChart(balancePerMonth){
+  for(let i = 0; i< 7; i++){
+    dataLine[i] = balancePerMonth[i].value;
+    labelLine[i] = balancePerMonth[i].month; 
+  }
+}
 
+function generateLineChart(){
+  const data = {
+    labels: labelLine,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: '#5143cc',
+      borderColor: '#5143cc',
+      data: dataLine,
+    }]
+  };
 
+  const configLine = {
+    type: 'line',
+    data: data,
+    options: {
+      pointRadius:0,
+      maintainAspectRatio: false,
+      borderWidth: 5,
+      tension: 0.5,
+      scales:{
+        y:{
+          beginAtZero: true,
+          ticks:{
+            display: false,
+          },
+          gird:{
+            display: false,
+            drawTicks:false,
+            drawOnChartArea: false,
+          }
+        },
+      },
+      
+      plugins: {
+        tooltip:{
+          enabled: true,
+        },
+        legend:{
+            display:false,
+        },
+        
+      },
+        
+      
+    }
+  };
+
+  const lineChart = new Chart(
+    document.getElementById('line-chart'),
+    configLine,
+  )
+}

@@ -39,6 +39,39 @@ const userSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  balancePerMonth: {
+    type: Array,
+    default: [
+      {
+        month: 'January',
+        value: 5822,
+      },
+      {
+        month: 'February',
+        value: 7521,
+      },
+      {
+        month: 'March',
+        value: 6251,
+      },
+      {
+        month: 'April',
+        value: 5521,
+      },
+      {
+        month: 'May',
+        value: 6842,
+      },
+      {
+        month: 'June',
+        value: 7520,
+      },
+      {
+        month: 'July',
+        value: 0,
+      },
+    ],
+  },
   incomeCategories:{
     type: Array,
     default: [
