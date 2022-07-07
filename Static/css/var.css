@@ -23,7 +23,7 @@ html, body {
   5. Improve text rendering
 */
 body {
-    font-family: var(--f-family);
+  font-family: var(--f-family);
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
 }
