@@ -63,19 +63,47 @@
   grid-row-gap: 2rem;  
 }
 
+/*balance*/
+
 .balance-con {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
   border-radius: 30px;
-  background-color: var(--clr-white);
+  background: var(--clr-grd-purple);
   grid-area: 1 / 1 / 3 / 3; 
 }
 
+.balance-txt {
+  color: var(--clr-txt-white);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.sum-con{
+  color: var(--clr-txt-white);
+  display: flex;
+  margin-top: 1.6rem;
+}
+
+.sum-con p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/*line-chart*/
+
 .line-chart-con {
   border-radius: 30px;
+  padding: 1rem;
   background-color: var(--clr-white);
   grid-area: 3 / 1 / 5 / 3; 
 }
 
+/*saving*/
+
 .saving1-con {
+  padding: 1rem;
   border-radius: 30px;
   background-color: var(--clr-white);
   grid-area: 5 / 1 / 7 / 2; 
@@ -83,6 +111,7 @@
 }
 
 .saving2-con {
+  padding: 1rem;
   border-radius: 30px;
   background-color: var(--clr-white);
   grid-area: 5 / 2 / 7 / 3; 
@@ -98,22 +127,91 @@
   
 }
 
+/*incomes*/
+
 .incomes-con {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
   border-radius: 30px;
-  background-color: var(--clr-white);
+  background: var(--clr-grd-purple);
   grid-area: 7 / 1 / 8 / 3; 
 }
 
+.incomes-txt {
+  color: var(--clr-txt-white);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.incomes-sum-con{
+  color: var(--clr-txt-white);
+  display: flex;
+  margin-top: 1.6rem;
+}
+
+.incomes-sum-con p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/*expenses*/
+
 .expenses-con {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
   border-radius: 30px;
-  background-color: var(--clr-white);
+  background: var(--clr-grd-purple);
   grid-area: 8 / 1 / 9 / 3; 
 }
 
+.expenses-txt {
+  color: var(--clr-txt-white);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.expenses-sum-con{
+  color: var(--clr-txt-white);
+  display: flex;
+  margin-top: 1.6rem;
+}
+
+.expenses-sum-con p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+/*wallet-info*/
+
 .wallet-info-con {
+  padding: 2rem;
   border-radius: 30px;
   background-color: var(--clr-white);
   grid-area: 9 / 1 / 14 / 3; 
+}
+
+.cat-info-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+}
+
+.cat-con {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cat-con p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.cat-sum-con {
+  display: flex;
 }
 
 /*Nav*/
