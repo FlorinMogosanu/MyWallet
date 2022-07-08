@@ -120,11 +120,9 @@
 
 .no-data{
   position: absolute;
-  width: 100%;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  
 }
 
 /*incomes*/
