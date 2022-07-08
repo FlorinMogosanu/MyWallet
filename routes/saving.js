@@ -40,6 +40,8 @@ router.delete('/:token/:index', async(req,res) =>{
   const user = await User.findById(decoded.id)
   const index = req.params.index
   if(!user) return res.json({status: 'error', error: 'User not found'})
+  user.balance = user.balance + user.savingItems[index].savedValue
+  user.savedValue = user.savedValue - user.savingItems[index].savedValue
   user.savingItems.splice(index, 1)
 
   await user.save()

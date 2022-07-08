@@ -72,8 +72,14 @@ function updateExpense(balance){
 }
 
 function generateSavingsOne(item){
-  if(!item) return
   const savingCon = document.querySelector('.saving1-con')
+  if(!item){
+    const p = document.createElement('p')
+    p.setAttribute('class', 'no-data')
+    p.innerHTML = 'No data yet'
+    savingCon.appendChild(p)
+     return
+  }
   const percentage = Math.floor(item.savedValue / item.value * 100)
 
   const catNameCon = document.createElement('div')
@@ -140,8 +146,14 @@ function generateSavingsOne(item){
 }
 
 function generateSavingsTwo(item){
-  if(!item) return
   const savingCon = document.querySelector('.saving2-con')
+  if(!item){
+    const p = document.createElement('p')
+    p.setAttribute('class', 'no-data')
+    p.innerHTML = 'No data yet'
+    savingCon.appendChild(p)
+     return
+  }
   const percentage = Math.floor(item.savedValue / item.value * 100)
 
   const catNameCon = document.createElement('div')
@@ -237,8 +249,6 @@ function createDataForChart(categoriesOutcome){
     dataOutcome[2] = s
     labelOutcome[2] = 'Other'
     colorOutcome[2] = '#EA7878';
-
-    console.log(dataOutcome, labelOutcome, colorOutcome);
 }
 
 function generateChart(){
@@ -339,10 +349,17 @@ function generateLegend() {
 }
 
 function createDataForLineChart(balancePerMonth){
-  for(let i = 0; i< 7; i++){
-    dataLine[i] = balancePerMonth[i].value;
-    labelLine[i] = balancePerMonth[i].month; 
+  let nr = 0
+  for(let i = 0; i< 12; i++){
+    if(balancePerMonth[i].value > 0){
+      dataLine[nr] = balancePerMonth[i].value;
+      labelLine[nr] = balancePerMonth[i].month; 
+      nr++
+    }
   }
+
+  console.log(dataLine)
+  console.log(labelLine)
 }
 
 function generateLineChart(){

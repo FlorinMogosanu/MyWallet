@@ -44,30 +44,52 @@ const userSchema = new mongoose.Schema({
     default: [
       {
         month: 'January',
-        value: 5822,
+        value: 0,
       },
       {
         month: 'February',
-        value: 7521,
+        value: 0,
       },
       {
+
         month: 'March',
-        value: 6251,
+        value: 0,
       },
       {
+
         month: 'April',
-        value: 5521,
+        value: 0,
       },
       {
         month: 'May',
-        value: 6842,
+        value: 0,
       },
       {
         month: 'June',
-        value: 7520,
+        value: 0,
       },
       {
         month: 'July',
+        value: 0,
+      },
+      {
+        month: 'August',
+        value: 0,
+      },
+      {
+        month: 'September',
+        value: 0,
+      },
+      {
+        month: 'October',
+        value: 0,
+      },
+      {
+        month: 'November',
+        value: 0,
+      },
+      {
+        month: 'December',
         value: 0,
       },
     ],

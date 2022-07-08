@@ -74,10 +74,22 @@ router.post('/:token', async (req, res) =>{
         }
       })
     }
-    if(demoValue === 0) user.balance = user.balance + transaction.amount
-    else if (demoValue > 0) user.balance = user.balance + demoValue
-    user.balancePerMonth[6] = user.balance
-    
+    let monthValue
+    const monthIndex = parseInt(`${transaction.date[5]}${transaction.date[6]}`)-1
+    if(demoValue === 0) {
+      user.balance = user.balance + transaction.amount
+       monthValue = user.balancePerMonth[monthIndex].value + transaction.amount
+    }
+    else if (demoValue > 0) {
+      user.balance = user.balance + demoValue
+      monthValue = user.balancePerMonth[monthIndex].value + demoValue
+    }
+
+
+    user.balancePerMonth[monthIndex] = {
+      month: user.balancePerMonth[monthIndex].month,
+      value: monthValue,
+    }
     user.transactions.unshift(transaction)
   }
   

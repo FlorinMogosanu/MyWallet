@@ -79,12 +79,23 @@
   border-radius: 30px;
   background-color: var(--clr-white);
   grid-area: 5 / 1 / 7 / 2; 
+  position: relative;
 }
 
 .saving2-con {
   border-radius: 30px;
   background-color: var(--clr-white);
   grid-area: 5 / 2 / 7 / 3; 
+  position: relative;
+}
+
+.no-data{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  
 }
 
 .incomes-con {
