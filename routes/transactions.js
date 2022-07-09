@@ -78,7 +78,7 @@ router.post('/:token', async (req, res) =>{
     const monthIndex = parseInt(`${transaction.date[5]}${transaction.date[6]}`)-1
     if(demoValue === 0) {
       user.balance = user.balance + transaction.amount
-       monthValue = user.balancePerMonth[monthIndex].value + transaction.amount
+      monthValue = user.balancePerMonth[monthIndex].value + transaction.amount
     }
     else if (demoValue > 0) {
       user.balance = user.balance + demoValue

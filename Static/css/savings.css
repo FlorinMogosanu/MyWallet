@@ -128,9 +128,7 @@
 
   .cats-con {
     height: 55%;
-    max-width: 900px;
     position: relative;
-    
   }
 
   .cats-con > ul{
@@ -181,6 +179,7 @@
   }
 
   .cat-name {
+    color: var(--clr-txt-black);
     font-size: 1.4rem;
     font-weight: 500;
     margin-left: 1rem;
@@ -203,6 +202,7 @@
   }
 
   .percentage-txt {
+    color: var(--clr-txt-black);
     font-size: 1.4rem;
     font-weight: 500;
   }
@@ -345,6 +345,189 @@
       height: 79.5%;
       margin-top: 3.2%;
     }
+
+    .info-con {
+      display: flex;
+      flex-direction: column;
+      height: 29.6%;
+      justify-content: space-between;
+    }
+  
+    /*savings*/
+  
+    .saved-con {
+      width: 30%;
+      border-radius: 30px;
+      background: var(--clr-grd-purple);
+      height: 57%;
+      padding: 1rem 1.4rem;
+    }
+  
+    .saved-txt {
+      color: var(--clr-txt-white);
+      font-size: clamp(1.8rem, 1rem + .8vw, 3rem);
+      font-weight: 600;
+    }
+  
+    .sum-con {
+      margin-top: .8rem;
+      margin-bottom: .8rem;
+      display: flex;
+    }
+  
+    .sum-con p{
+      color: var(--clr-txt-white);
+      font-size: clamp(1.2rem, 1.2rem + .8vw, 1.8rem);
+      font-weight: 500;
+    }
+  
+    /*edit button*/
+  
+    .buttons-con {
+      height: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .buttons-con p{
+      color: var(--clr-txt-black);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  
+    .edit-button {
+      color: var(--clr-txt-black);
+      background-color:var(--clr-white);
+      border: none;
+      border-radius: 30px;
+      height: 80%;
+      width: 20%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  
+    .selected{
+      font-weight: 600;
+    }
+  
+    /*cat nav*/
+  
+    .cats-con button {
+      border: none;
+      background: none;
+    }
+  
+    .left-arrow {
+      left: -5px;
+    }
+  
+    .right-arrow {
+      right: -5px;
+    }
+  
+    .cats-con button img{
+      height: 2.2rem;
+    }
+    
+    /*categories*/
+  
+    .cats-con {
+      height: 55%;
+      width: 40%;
+      position: relative;
+      
+    }
+  
+    .cats-con > ul{
+      width: 100%;
+      height: 100%;
+      list-style: none;
+    }
+  
+    .cat-con {
+      background-color: var(--clr-white);
+      height: clamp(12.5rem, 10rem + 3vw, 18rem);
+      width: clamp(12.5rem, 10rem + 3vw, 18rem);
+      width: 60%;
+      position: absolute;
+      left: 0; 
+      right: 0; 
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: auto; 
+      margin-right: auto; 
+      max-width: 700px;
+      border-radius: 30px;
+      opacity: 0;
+      transition: 200ms opacity ease-in-out;
+      transition-delay: 200ms;
+    }
+  
+    .cat-con[data-active]{
+      opacity: 1;
+      z-index:1;
+      transition-delay: 0;
+    }
+  
+    .carousel-button{
+      position: absolute;
+      z-index:2;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  
+    /*cat-con*/
+  
+    .cat-trash-con {
+      height: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .cat-name {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+  
+    .chart-con {
+      height: 55%;
+      width: 38%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .percentage-con {
+      height: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .percentage-txt {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  
+    .trash-img {
+      height: 1.6rem;
+      margin-right: 1rem;
+    }
+  
+    .dnone{
+      display: none;
+    }
+  
+    .chart-con img {
+      height: 7.5rem;
+    }
       
     /*Nav*/
   
@@ -373,6 +556,7 @@
     }
   
     .logo-txt {
+      color: var(--clr-txt-black);
       font-size: clamp(1.2rem, 1rem + .5vw, 1.8rem);
       margin: .5rem;
       font-weight: 600;

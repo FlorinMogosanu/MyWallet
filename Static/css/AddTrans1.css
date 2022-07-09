@@ -389,6 +389,7 @@
 
   .options-ts3 input {
     color: var(--clr-txt-black);
+    background-color: var(--clr-white);
     height: 60%;
     border: none;
     border-radius: 30px;
@@ -605,6 +606,7 @@
     }
   
     .logo-txt {
+      color: var(--clr-txt-black);
       font-size: clamp(1.2rem, 1rem + .5vw, 1.8rem);
       margin: .5rem;
       font-weight: 600;

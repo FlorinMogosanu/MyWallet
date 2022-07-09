@@ -417,7 +417,7 @@ function nextTwoClickHandler(e){
     formPercentage.setAttribute('class', 'percentagecon')
     const percentageLabel = document.createElement('label')
     percentageLabel.setAttribute('for', 'percentage')
-    percentageLabel.innerHTML = 'Percentage extracted from income'
+    percentageLabel.innerHTML = 'Percentage'
     const percentageInput = document.createElement('input')
     percentageInput.setAttribute('type', 'number')
     percentageInput.setAttribute('id', 'percentage')
@@ -519,12 +519,7 @@ async function doneClickHandler(e){
 }
 
 function incomeRadioClickHandler(e){
-  if(darkMode === 'enabled'){
-    imgIncome.src = '/static/images/plus.png'
-    imgExpense.src = '/static/images/pluswhite.png'
-    imgSaving.src = '/static/images/pluswhite.png'
-  }
-  else{
+  if(darkMode !== 'enabled'){
     imgIncome.src = '/static/images/pluswhite.png'
     imgExpense.src = '/static/images/plus.png'
     imgSaving.src = '/static/images/plus.png'
@@ -532,12 +527,7 @@ function incomeRadioClickHandler(e){
 }
 
 function expenseRadioClickHandler(e){
-  if(darkMode === 'enabled'){
-    imgIncome.src = '/static/images/pluswhite.png'
-    imgExpense.src = '/static/images/plus.png'
-    imgSaving.src = '/static/images/pluswhite.png'
-  }
-  else{
+  if(darkMode !== 'enabled'){
     imgIncome.src = '/static/images/plus.png'
     imgExpense.src = '/static/images/pluswhite.png'
     imgSaving.src = '/static/images/plus.png'
@@ -545,12 +535,7 @@ function expenseRadioClickHandler(e){
 }
 
 function savingRadioClickHandler(e){
-  if(darkMode === 'enabled'){
-    imgIncome.src = '/static/images/pluswhite.png'
-    imgExpense.src = '/static/images/pluswhite.png'
-    imgSaving.src = '/static/images/plus.png'
-  }
-  else{
+  if(darkMode !== 'enabled'){
     imgIncome.src = '/static/images/plus.png'
     imgExpense.src = '/static/images/plus.png'
     imgSaving.src = '/static/images/pluswhite.png'
