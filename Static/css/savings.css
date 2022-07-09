@@ -453,9 +453,6 @@
       height: clamp(12.5rem, 10rem + 3vw, 18rem);
       width: clamp(12.5rem, 10rem + 3vw, 18rem);
       width: 60%;
-      position: absolute;
-      left: 0; 
-      right: 0; 
       top: 50%;
       transform: translateY(-50%);
       margin-left: auto; 
