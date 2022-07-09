@@ -27,7 +27,7 @@ const editBtn = document.querySelector('.edit-button')
 editBtn.addEventListener('click', editBtnHandler)
 
 async function getUser(){
-  const {user} = await fetch(`/api/user/${token}`,{
+  const {user} = await fetch(`https://turuiup.com/api/user/${token}`,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function generateSliderObjects(savingItems){
     else thrashImg.src = '../images/trash.png'
 
     thrashImg.addEventListener('click', async () =>{
-      const result = await fetch(`/api/saving/${token}/${index}`,{
+      const result = await fetch(`https://turuiup.com/api/saving/${token}/${index}`,{
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

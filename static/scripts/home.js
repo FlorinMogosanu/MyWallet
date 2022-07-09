@@ -28,7 +28,7 @@ if(darkMode === 'enabled') {
 getUser()
 
 async function getUser(){
-  const {user} = await fetch(`/api/user/${token}`,{
+  const {user} = await fetch(`https://turuiup.com/api/user/${token}`,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -458,7 +458,7 @@ async function doneClickHandler(e){
     transaction.description = descriptionInput.value
     console.log(transaction)
 
-    const result = await fetch(`/api/transaction/${token}`, {
+    const result = await fetch(`https://turuiup.com/api/transaction/${token}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -492,7 +492,7 @@ async function doneClickHandler(e){
 
     console.log(saving)
 
-    const result = await fetch(`/api/saving/${token}`, {
+    const result = await fetch(`https://turuiup.com/api/saving/${token}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

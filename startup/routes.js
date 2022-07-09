@@ -10,11 +10,11 @@ const update = require('../routes/update')
 
 module.exports = function(app){
   app.use(bodyParser.json())
-  app.use('/api/register', registerUser)
-  app.use('/api/login', loginUser)
-  app.use('/api/user', user)
-  app.use('/api/transaction', transaction)
-  app.use('/api/saving', saving)
-  app.use('/api/currency', currency)
-  app.use('/api/update', update)
+  app.use('https://turuiup.com/api/register', registerUser)
+  app.use('https://turuiup.com/api/login', loginUser)
+  app.use('https://turuiup.com/api/user', user)
+  app.use('https://turuiup.com/api/transaction', transaction)
+  app.use('https://turuiup.com/api/saving', saving)
+  app.use('https://turuiup.com/api/currency', currency)
+  app.use('https://turuiup.com/api/update', update)
 }

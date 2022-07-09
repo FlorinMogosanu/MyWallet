@@ -12,7 +12,7 @@ async function loginUser(event){
   const email = document.getElementById('email')
   const password = document.getElementById('password')
 
-  const result = await fetch('/api/login', {
+  const result = await fetch('https://turuiup.com/api/login', {
     method: 'POST',
       headers: {
         'Content-Type': 'application/json',
