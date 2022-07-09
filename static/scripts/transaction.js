@@ -25,16 +25,16 @@ if(darkMode === 'enabled') {
   const backImgs = document.querySelectorAll('.back')
   const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  savingImg.src = '/static/images/savingswhite.png'
-  historyImg.src = '/static/images/historywhite.png'
-  imgIncome.src = '/static/images/pluswhite.png'
-  imgExpense.src ='/static/images/pluswhite.png'
-  imgSaving.src = '/static/images/pluswhite.png'
-  nextImgs.forEach(img => img.src = '/static/images/arrow-rightwhite.png')
-  backImgs.forEach(img => img.src = '/static/images/arrow-leftwhite.png')
-  logoImg.src = '/static/images/logowhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  savingImg.src = '../images/savingswhite.png'
+  historyImg.src = '../images/historywhite.png'
+  imgIncome.src = '../images/pluswhite.png'
+  imgExpense.src ='../images/pluswhite.png'
+  imgSaving.src = '../images/pluswhite.png'
+  nextImgs.forEach(img => img.src = '../images/arrow-rightwhite.png')
+  backImgs.forEach(img => img.src = '../images/arrow-leftwhite.png')
+  logoImg.src = '../images/logowhite.png'
 }
 
 const expenseCategory = [
@@ -42,63 +42,63 @@ const expenseCategory = [
       name: 'Food',
       value: 0,
       color: '#95D8AF',
-      image: '/static/images/expenses/food.png',
+      image: '../images/expenses/food.png',
       class: 'food'
     },
     {
       name: 'Transport',
       value: 0,
       color: '#E9C6FF',
-      image: '/static/images/expenses/transport.png',
+      image: '../images/expenses/transport.png',
       class: 'transport'
     },
     {
       name: 'Utility',
       value: 0,
       color: '#FFEDAB',
-      image: '/static/images/expenses/utility.png',
+      image: '../images/expenses/utility.png',
       class: 'utility'
     },
     {
       name: 'Medication',
       value: 0,
       color: '#D4F986',
-      image: '/static/images/expenses/medication.png',
+      image: '../images/expenses/medication.png',
       class: 'medication'
     },
     {
       name: 'Travel',
       value: 0,
       color: '#92E5FF',
-      image: '/static/images/expenses/travel.png',
+      image: '../images/expenses/travel.png',
       class: 'travel'
     },
     {
       name: 'Clothes',
       value: 0,
       color: '#B3FFE4',
-      image: '/static/images/expenses/clothes.png',
+      image: '../images/expenses/clothes.png',
       class: 'clothes'
     },
     {
       name: 'Insurance',
       value: 0,
       color: '#EA78BE',
-      image: '/static/images/expenses/insurance.png',
+      image: '../images/expenses/insurance.png',
       class: 'insurance'
     },
     {
       name: 'Education',
       value: 0,
       color: '#7888EA',
-      image: '/static/images/expenses/education.png',
+      image: '../images/expenses/education.png',
       class: 'education'
     },
     {
       name: 'Other',
       value: 0,
       color: '#EA7878',
-      image: '/static/images/expenses/other.png',
+      image: '../images/expenses/other.png',
       class: 'other-expense'
     }
 ]
@@ -108,35 +108,35 @@ const incomeCategory = [
     name: 'Salary',
     value: 0,
     color: '#95D8AF',
-    image: '/static/images/income/salary.png',
+    image: '../images/income/salary.png',
     class: 'salary'
   },
   {
     name: 'Dividend',
     value: 0,
     color: '#95D8AF',
-    image: '/static/images/income/dividend.png',
+    image: '../images/income/dividend.png',
     class: 'dividend'
   },
   {
     name: 'Business',
     value: 0,
     color: '#95D8AF',
-    image: '/static/images/income/business.png',
+    image: '../images/income/business.png',
     class: 'business'
   },
   {
     name: 'Rental',
     value: 0,
     color: '#95D8AF',
-    image: '/static/images/income/rental.png',
+    image: '../images/income/rental.png',
     class: 'rental'
   },
   {
     name: 'Other',
     value: 0,
     color: '#95D8AF',
-    image: '/static/images/income/other.png',
+    image: '../images/income/other.png',
     class: 'other-income'
   },
 ]
@@ -148,7 +148,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/car.png',
+    image: '../images/savings/car.png',
     class: 'car'
   },
   {
@@ -157,7 +157,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/debt.png',
+    image: '../images/savings/debt.png',
     class: 'debt'
   },
   {
@@ -166,7 +166,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/emergency.png',
+    image: '../images/savings/emergency.png',
     class: 'emergency'
   },
   {
@@ -175,7 +175,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/gadgets.png',
+    image: '../images/savings/gadgets.png',
     class: 'gadgets'
   },
   {
@@ -184,7 +184,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/house.png',
+    image: '../images/savings/house.png',
     class: 'house'
   },
   {
@@ -193,7 +193,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/retirement.png',
+    image: '../images/savings/retirement.png',
     class: 'retirement'
   },
   {
@@ -202,7 +202,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/vacation.png',
+    image: '../images/savings/vacation.png',
     class: 'vacation'
   },
   {
@@ -211,7 +211,7 @@ const savingsCategory =[
     savedValue: 0,
     percentage: 0,
     color: '#EA7878',
-    image: '/static/images/savings/other.png',
+    image: '../images/savings/other.png',
     class: 'other-saving'
   }
 ]
@@ -475,7 +475,7 @@ async function doneClickHandler(e){
     .catch((err)=> alert(err.message))
 
     if(result.status === 'ok'){
-      location.replace('/static/pages/home.html')
+      location.replace('home.html')
     }
     else{
       alert(result.error)
@@ -510,7 +510,7 @@ async function doneClickHandler(e){
     .catch((err)=> alert(err.message))
 
     if(result.status === 'ok'){
-      location.replace('/static/pages/home.html')
+      location.replace('home.html')
     }
     else{
       alert(result.error)
@@ -520,24 +520,24 @@ async function doneClickHandler(e){
 
 function incomeRadioClickHandler(e){
   if(darkMode !== 'enabled'){
-    imgIncome.src = '/static/images/pluswhite.png'
-    imgExpense.src = '/static/images/plus.png'
-    imgSaving.src = '/static/images/plus.png'
+    imgIncome.src = '../images/pluswhite.png'
+    imgExpense.src = '../images/plus.png'
+    imgSaving.src = '../images/plus.png'
   }
 }
 
 function expenseRadioClickHandler(e){
   if(darkMode !== 'enabled'){
-    imgIncome.src = '/static/images/plus.png'
-    imgExpense.src = '/static/images/pluswhite.png'
-    imgSaving.src = '/static/images/plus.png'
+    imgIncome.src = '../images/plus.png'
+    imgExpense.src = '../images/pluswhite.png'
+    imgSaving.src = '../images/plus.png'
   }
 }
 
 function savingRadioClickHandler(e){
   if(darkMode !== 'enabled'){
-    imgIncome.src = '/static/images/plus.png'
-    imgExpense.src = '/static/images/plus.png'
-    imgSaving.src = '/static/images/pluswhite.png'
+    imgIncome.src = '../images/plus.png'
+    imgExpense.src = '../images/plus.png'
+    imgSaving.src = '../images/pluswhite.png'
   }
 }

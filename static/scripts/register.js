@@ -30,7 +30,7 @@ async function registerUser(event){
   .catch((err)=> alert(err.message))
 
   if(result.status === 'ok'){
-    location.replace('/static/pages/home.html')
+    location.replace('home.html')
     localStorage.setItem('token', result.data)
   }
   else{

@@ -14,12 +14,12 @@ if(darkMode === 'enabled') {
   const rightArrow = document.querySelector('.right-arrow img')
   const leftArrow = document.querySelector('.left-arrow img')
   document.body.classList.add('darkMode')
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  historyImg.src = '/static/images/historywhite.png'
-  logoImg.src = '/static/images/logowhite.png'
-  rightArrow.src = '/static/images/arrow-rightwhite.png'
-  leftArrow.src = '/static/images/arrow-leftwhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  historyImg.src = '../images/historywhite.png'
+  logoImg.src = '../images/logowhite.png'
+  rightArrow.src = '../images/arrow-rightwhite.png'
+  leftArrow.src = '../images/arrow-leftwhite.png'
 }
 getUser()
 
@@ -66,8 +66,8 @@ function generateSliderObjects(savingItems){
 
     const thrashImg = document.createElement('img')
     thrashImg.setAttribute('class', 'trash-img dnone')
-    if(darkMode === 'enabled') thrashImg.src = '/static/images/trashwhite.png'
-    else thrashImg.src = '/static/images/trash.png'
+    if(darkMode === 'enabled') thrashImg.src = '../images/trashwhite.png'
+    else thrashImg.src = '../images/trash.png'
 
     thrashImg.addEventListener('click', async () =>{
       const result = await fetch(`/api/saving/${token}/${index}`,{

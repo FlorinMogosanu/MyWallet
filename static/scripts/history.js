@@ -8,10 +8,10 @@ if(darkMode === 'enabled') {
   const savingsImg = document.querySelector('.savings-img')
   const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  savingsImg.src = '/static/images/savingswhite.png'
-  logoImg.src = '/static/images/logowhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  savingsImg.src = '../images/savingswhite.png'
+  logoImg.src = '../images/logowhite.png'
 }
 
 async function loadHistory(){
@@ -35,8 +35,8 @@ async function loadHistory(){
   
     const img = document.createElement('img');
     img.setAttribute('class', 'income-img')
-    if(transaction.type === 'expense') img.src = '/static/images/right-arrow-red.png'
-    else if(transaction.type === 'income') img.src = '/static/images/right-arrow-green.png'
+    if(transaction.type === 'expense') img.src = '../images/right-arrow-red.png'
+    else if(transaction.type === 'income') img.src = '../images/right-arrow-green.png'
     leftContainer.appendChild(img)
 
     const leftInfo = document.createElement('div')

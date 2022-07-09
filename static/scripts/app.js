@@ -6,7 +6,7 @@ if(darkMode === 'enabled') {
 
 function checkIfLoggedIn() {
   const token = localStorage.getItem('token');
-  if(token) location.replace('/static/pages/home.html')
+  if(token) location.replace('./pages/home.html')
 }
 
 checkIfLoggedIn();

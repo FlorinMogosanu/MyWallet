@@ -10,12 +10,12 @@ if(darkMode === 'enabled') {
   const historyImg = document.querySelector('.history-img')
   const logoImg = document.querySelector('.logo-img')
   document.body.classList.add('darkMode')
-  profileImg.src = '/static/images/accountwhite.png'
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  savingImg.src = '/static/images/savingswhite.png'
-  historyImg.src = '/static/images/historywhite.png'
-  logoImg.src = '/static/images/logowhite.png'
+  profileImg.src = '../images/accountwhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  savingImg.src = '../images/savingswhite.png'
+  historyImg.src = '../images/historywhite.png'
+  logoImg.src = '../images/logowhite.png'
 }
 
 submit.addEventListener('click', sumbitClickHandler)
@@ -40,7 +40,7 @@ async function sumbitClickHandler(){
   .catch((err)=> alert(err.message))
 
   if(result.status === 'ok'){
-    location.replace('/static/pages/settings.html')
+    location.replace('settings.html')
   }
   else{
     alert(result.error)

@@ -24,7 +24,7 @@ router.post('/:token', async (req, res) =>{
 
   if(transaction.type === 'expense'){
     user.balance = user.balance - transaction.amount
-    user.balancePerMonth[6] = user.balance
+    const monthIndex = parseInt(`${transaction.date[5]}${transaction.date[6]}`)-1
     user.expenseValue = user.expenseValue + transaction.amount
     const category = user.outcomeCategories.find(cat => cat.name === transaction.category)
     const indexOfCategory = user.outcomeCategories.indexOf(category)
@@ -35,6 +35,12 @@ router.post('/:token', async (req, res) =>{
       color: user.outcomeCategories[indexOfCategory].color,
       image: user.outcomeCategories[indexOfCategory].image,
     }
+
+    user.balancePerMonth[monthIndex] = {
+      month: user.balancePerMonth[monthIndex].month,
+      value: user.balance,
+    }
+
     user.transactions.unshift(transaction)
   }
   else if(transaction.type === 'income'){
@@ -74,21 +80,18 @@ router.post('/:token', async (req, res) =>{
         }
       })
     }
-    let monthValue
     const monthIndex = parseInt(`${transaction.date[5]}${transaction.date[6]}`)-1
     if(demoValue === 0) {
       user.balance = user.balance + transaction.amount
-      monthValue = user.balancePerMonth[monthIndex].value + transaction.amount
     }
     else if (demoValue > 0) {
       user.balance = user.balance + demoValue
-      monthValue = user.balancePerMonth[monthIndex].value + demoValue
     }
 
 
     user.balancePerMonth[monthIndex] = {
       month: user.balancePerMonth[monthIndex].month,
-      value: monthValue,
+      value: user.balance,
     }
     user.transactions.unshift(transaction)
   }

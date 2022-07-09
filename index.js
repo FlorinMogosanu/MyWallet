@@ -18,7 +18,7 @@ app.use('/static', express.static(path.join(__dirname, 'static')))
 
 
 
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 8080;
 app.listen(port,()=>{
   console.log(`Server listening on port ${port}`);
 })

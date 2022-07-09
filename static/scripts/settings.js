@@ -19,50 +19,50 @@ loadName()
 
 function enableDarkMode(){
   document.body.classList.add('darkMode')
-  profileImg.src = '/static/images/accountwhite.png'
-  darkImg.src = '/static/images/darkmodewhite.png'
-  currencyImg.src = '/static/images/currencywhite.png'
-  logoutImg.src = '/static/images/logoutwhite.png'
-  rightArrow.src = '/static/images/arrow-rightwhite.png'
-  rightArrowProf.src = '/static/images/arrow-rightwhite.png'
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  savingImg.src = '/static/images/savingswhite.png'
-  historyImg.src = '/static/images/historywhite.png'
-  logoImg.src = '/static/images/logowhite.png'
+  profileImg.src = '../images/accountwhite.png'
+  darkImg.src = '../images/darkmodewhite.png'
+  currencyImg.src = '../images/currencywhite.png'
+  logoutImg.src = '../images/logoutwhite.png'
+  rightArrow.src = '../images/arrow-rightwhite.png'
+  rightArrowProf.src = '../images/arrow-rightwhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  savingImg.src = '../images/savingswhite.png'
+  historyImg.src = '../images/historywhite.png'
+  logoImg.src = '../images/logowhite.png'
   localStorage.setItem('darkMode', 'enabled')
 }
 
 function disableDarkMode(){
   document.body.classList.remove('darkMode')
-  profileImg.src = '/static/images/account.png'
-  darkImg.src = '/static/images/darkmode.png'
-  currencyImg.src = '/static/images/currency.png'
-  logoutImg.src = '/static/images/logout.png'
-  rightArrow.src = '/static/images/arrow-right.png'
-  rightArrowProf.src = '/static/images/arrow-right.png'
-  homeImg.src = '/static/images/home.png'
-  walletImg.src = '/static/images/wallet.png'
-  savingImg.src = '/static/images/savings.png'
-  historyImg.src = '/static/images/history.png'
-  logoImg.src = '/static/images/logo.png'
+  profileImg.src = '../images/account.png'
+  darkImg.src = '../images/darkmode.png'
+  currencyImg.src = '../images/currency.png'
+  logoutImg.src = '../images/logout.png'
+  rightArrow.src = '../images/arrow-right.png'
+  rightArrowProf.src = '../images/arrow-right.png'
+  homeImg.src = '../images/home.png'
+  walletImg.src = '../images/wallet.png'
+  savingImg.src = '../images/savings.png'
+  historyImg.src = '../images/history.png'
+  logoImg.src = '../images/logo.png'
   localStorage.setItem('darkMode', null)
 }
 
 if(darkMode === 'enabled'){
   document.body.classList.add('darkMode')
   dmToggle.checked = true
-  profileImg.src = '/static/images/accountwhite.png'
-  darkImg.src = '/static/images/darkmodewhite.png'
-  currencyImg.src = '/static/images/currencywhite.png'
-  logoutImg.src = '/static/images/logoutwhite.png'
-  rightArrow.src = '/static/images/arrow-rightwhite.png'
-  rightArrowProf.src = '/static/images/arrow-rightwhite.png'
-  homeImg.src = '/static/images/homewhite.png'
-  walletImg.src = '/static/images/walletwhite.png'
-  savingImg.src = '/static/images/savingswhite.png'
-  historyImg.src = '/static/images/historywhite.png'
-  logoImg.src = '/static/images/logowhite.png'
+  profileImg.src = '../images/accountwhite.png'
+  darkImg.src = '../images/darkmodewhite.png'
+  currencyImg.src = '../images/currencywhite.png'
+  logoutImg.src = '../images/logoutwhite.png'
+  rightArrow.src = '../images/arrow-rightwhite.png'
+  rightArrowProf.src = '../images/arrow-rightwhite.png'
+  homeImg.src = '../images/homewhite.png'
+  walletImg.src = '../images/walletwhite.png'
+  savingImg.src = '../images/savingswhite.png'
+  historyImg.src = '../images/historywhite.png'
+  logoImg.src = '../images/logowhite.png'
 }
 
 dmToggle.addEventListener('change', function(){
@@ -79,7 +79,7 @@ selectCurr.addEventListener('change', selectCurrHandler);
 
 function logOutBtnHandler(){
   localStorage.removeItem('token')
-  location.replace('/static/index.html')
+  location.replace('../index.html')
 }
 
 async function loadCurr(){
