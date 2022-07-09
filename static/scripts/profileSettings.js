@@ -25,7 +25,7 @@ async function sumbitClickHandler(){
   const lastName = document.querySelector('#last-name')
   const password = document.querySelector('#password')
 
-  const result = await fetch(`https://turuiup.com/api/update/${token}`, {
+  const result = await fetch(`http://34.76.29.36:8080/api/update/${token}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

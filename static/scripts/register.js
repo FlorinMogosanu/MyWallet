@@ -14,7 +14,7 @@ async function registerUser(event){
   const email = document.getElementById('email')
   const password = document.getElementById('password')
 
-  const result = await fetch('https://turuiup.com/api/register', {
+  const result = await fetch('http://34.76.29.36:8080/api/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

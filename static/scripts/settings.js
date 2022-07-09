@@ -83,7 +83,7 @@ function logOutBtnHandler(){
 }
 
 async function loadCurr(){
-  const result = await fetch(`https://turuiup.com/api/currency/${token}`,{
+  const result = await fetch(`http://34.76.29.36:8080/api/currency/${token}`,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ async function loadCurr(){
 }
 
 async function loadName(){
-  const {user} = await fetch(`https://turuiup.com/api/user/${token}`,{
+  const {user} = await fetch(`http://34.76.29.36:8080/api/user/${token}`,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ async function loadName(){
 }
 
 async function selectCurrHandler(){
-  const result = await fetch(`https://turuiup.com/api/currency/${token}`,{
+  const result = await fetch(`http://34.76.29.36:8080/api/currency/${token}`,{
     method: 'POST',
       headers: {
         'Content-Type': 'application/json',

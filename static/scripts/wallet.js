@@ -47,7 +47,7 @@ incomeBtn.addEventListener('click', incomeBtnHandler)
 
 
 async function getUser(){
-    const {user} = await fetch(`https://turuiup.com/api/user/${token}`,{
+    const {user} = await fetch(`http://34.76.29.36:8080/api/user/${token}`,{
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
