@@ -7,6 +7,7 @@ const router = express.Router();
 const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
 
 router.post('/', async (req, res) => {
+  res.setHeader('Acces-Control-Allow-Origin', "http://34.76.29.36:8080")
   const {error} = validate(req.body)
   if(error) return res.json({status: 'error', error: error.message})
 

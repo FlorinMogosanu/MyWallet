@@ -8,6 +8,7 @@ const router = express.Router();
 const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
 
 router.post('/:token', async(req,res) => {
+  res.setHeader('Acces-Control-Allow-Origin', "http://34.76.29.36:8080")
   try{
     const token = req.params.token
     const decoded = jwt_decode(token)
@@ -34,6 +35,7 @@ router.post('/:token', async(req,res) => {
 })
 
 router.delete('/:token/:index', async(req,res) =>{
+  res.setHeader('Acces-Control-Allow-Origin', "http://34.76.29.36:8080")
   try{
   const token = req.params.token
   const decoded = jwt_decode(token)
