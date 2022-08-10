@@ -10,7 +10,11 @@ const jwt = require("jsonwebtoken");
 require("./startup/db")();
 require("./startup/routes")(app);
 
-app.use("/static", express.static(path.join(__dirname, "static")));
+app.use(express.static('static'))
+app.use('/pages', express.static(__dirname + 'static/pages'))
+app.use('/css', express.static(__dirname + 'static/css'))
+app.use('/images', express.static(__dirname + 'static/images'))
+app.use('/scripts', express.static(__dirname + 'static/scripts'))
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
