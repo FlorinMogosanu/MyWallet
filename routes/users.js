@@ -1,23 +1,22 @@
-const express = require('express');
-const {User} = require('../models/user')
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const jwt_decode = require('jwt-decode')
-const Joi = require('joi')
+const express = require("express");
+const { User } = require("../models/user");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const jwt_decode = require("jwt-decode");
+const Joi = require("joi");
 const router = express.Router();
-const JWT_SECRET = 'kdhas9opydu91q123j124bmsadajhgjbaseuywgw4'
+const JWT_SECRET = "kdhas9opydu91q123j124bmsadajhgjbaseuywgw4";
 
-router.get('/:token', async (req, res) => {
-  res.setHeader('Acces-Control-Allow-Origin', "http://34.76.29.36:8080")
-  const token = req.params.token
-  const decoded = jwt_decode(token)
+router.get("/:token", async (req, res) => {
+  res.setHeader("Acces-Control-Allow-Origin", "http://localhost:3000/");
+  const token = req.params.token;
+  const decoded = jwt_decode(token);
 
-  const user = await User.findById(decoded.id)
+  const user = await User.findById(decoded.id);
 
-  if(!user) res.send({status: 'error', error: 'User not found'})
+  if (!user) res.send({ status: "error", error: "User not found" });
 
-  res.send({status: 'ok', user: user})
-})
+  res.send({ status: "ok", user: user });
+});
 
-module.exports = router
-
+module.exports = router;
